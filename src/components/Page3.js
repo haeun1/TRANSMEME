@@ -1,14 +1,17 @@
 // Page3.js
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Container, CenteredImage, Title, Divider } from "./TitleStyle";
 
 const Page3 = () => {
   const pageNumber = 3; // 페이지 번호를 변수로 설정
   return (
-    <div>
-      <h1>페이지 {pageNumber}</h1>
+    <Container>
+      <CenteredImage src="img/Transmeme.png" />
+      <Title>도감</Title>
+      <Divider />
       <NavLink to="/">메인 화면으로 이동</NavLink>
-    </div>
+    </Container>
   );
 };
 
