@@ -8,33 +8,6 @@
     background: #FFFFFF;
   }
   
-  /* 세대 통합을 위한 밈번역기 */
-  
-  .mem-translate {
-    position: absolute;
-    width: 336px;
-    height: 52px;
-    left: 692px;
-    top: 512px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    color: #000000;
-  }
-  
-  /* image 15 */
-  
-  .image15 {
-    position: absolute;
-    width: 300px;
-    height: 47.15px;
-    left: 617px;
-    top: 65px;
-    background: url(../mainImg/image\ 15.png);
-  }
-  
   /* Line 6 */
   
   .line6 {
@@ -42,7 +15,7 @@
     width: 1476.19px;
     height: 0px;
     left: 13px;
-    top: 704px;
+    top: 550px;
     border: 1px solid #ABABAB;
   }
   
@@ -52,8 +25,8 @@
     position: absolute;
     width: 488.23px;
     height: 0px;
-    left: 1015px;
-    top: 1256.23px;
+    left: 50%;
+    top: 900px;
     border: 1px solid #ABABAB;
     transform: rotate(-90deg);
   }
@@ -64,135 +37,36 @@
     position: absolute;
     width: 488.23px;
     height: 0px;
-    left: 502px;
-    top: 1256.23px;
+    left: 20%;
+    top: 900px;
     border: 1px solid #ABABAB;
     transform: rotate(-90deg);
   }
   
-  /* Group 21 */
+  /* quiz_btn */
   
-  .group21 {
+  .quiz_btn {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    left: 1170px;
-    top: 816px;
+    width: 320px;
+    height: 380px;
+    left: 592px;
+    top: 650px;
   }
   
-  /* dictionary 1 */
+  /* quiz_ic */
   
-  .dictionary1 {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    left: 1170px;
-    top: 816px;
-    background: url(../mainImg/dictionary\ 1.png);
-  }
-  
-  /* Group 20 */
-  
-  .group20 {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    left: 652px;
-    top: 780px;
-  }
-  
-  /* speech-bubble 1 */
-  
-  .speech-bubble1 {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    left: 652px;
-    top: 780px;
-    background: url(../mainImg/speech-bubble\ 1.png);
-  }
-  
-  /* Group 19 */
-  
-  .group19 {
-    position: absolute;
+  .quiz_ic {
     width: 220px;
     height: 220px;
-    left: 145px;
-    top: 810px;
-  }
-  
-  /* exam 1 */
-  
-  .exam1 {
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    left: 145px;
-    top: 810px;
-    background: url(../mainImg/exam\ 1.png);
-  }
-  
-  /* Group 18 */
-  
-  .group18 {
-    position: absolute;
-    width: 230px;
-    height: 350.44px;
-    left: 662px;
-    top: 231px;
-  }
-  
-  /* image 16 */
-  
-  .image16 {
-    position: absolute;
-    width: 180px;
-    height: 34.44px;
-    left: 692px;
-    top: 547px;
-    background: url(../mainImg/image\ 16.png);
-  }
-  
-  /* transfer 1 */
-  
-  .transfer1 {
-    position: absolute;
-    width: 230px;
-    height: 230px;
-    left: 662px;
-    top: 231px;
-    background: url(../mainImg/transfer\ 1.png);
-  }
-  
-  /* Rectangle 19 */
-  
-  .rectangle19 {
-    position: absolute;
-    width: 308px;
-    height: 76px;
-    left: 99px;
-    top: 1110px;
-    background: rgba(0, 176, 240, 0.52);
-    border-radius: 50px;
-  }
-  
-  /* Rectangle 29 */
-  
-  .rectangle29 {
-    position: absolute;
-    width: 308px;
-    height: 76px;
-    left: 1098px;
-    top: 1110px;
-    background: rgba(0, 176, 240, 0.52);
-    border-radius: 50px;
+    left: 652px;
+    top: 780px;
+    background-image: url("../mainImg/quiz_ic.png");
   }
   
   /* Rectangle 28 */
   
   .rectangle28 {
-    position: absolute;
+
     width: 308px;
     height: 76px;
     left: 592px;
@@ -201,21 +75,10 @@
     border-radius: 50px;
   }
   
-  /* Rectangle 27 */
-  
-  .rectangle27 {
-    position: absolute;
-    width: 225px;
-    height: 10px;
-    left: 1142px;
-    top: 1083px;
-    background: rgba(0, 176, 240, 0.38);
-  }
-  
   /* Rectangle 26 */
   
   .rectangle26 {
-    position: absolute;
+
     width: 140px;
     height: 10px;
     left: 681px;
@@ -226,7 +89,6 @@
   /* 신조어 맞추기 */
   
   .word-guess {
-    position: absolute;
     width: 273px;
     height: 75px;
     left: 641px;
@@ -242,7 +104,7 @@
   /* #MZ어 따라잡기 */
   
   .mz-catch {
-    position: absolute;
+
     width: 166px;
     height: 46px;
     left: 687px;
@@ -253,12 +115,77 @@
     font-size: 18px;
     line-height: 22px;
     color: #000000;
+    background-image: linear-gradient(
+        rgba(0 0 0 / 0) 30%,
+        rgba(0, 176, 240, 0.52) 70%
+    );
+  }
+  
+  /* mztest_btn */
+  
+  .mztest_btn {
+    position: absolute;
+    width: 320px;
+    height: 380px;
+    left: 99px;
+    top: 650px;
+  }
+  
+  /* exam_ic */
+  
+  .exam_ic {
+    width: 220px;
+    height: 220px;
+    left: 145px;
+    top: 810px;
+    background-image: url(../mainImg/exam_ic.png);
+  }
+  
+  /* Rectangle 19 */
+  
+  .rectangle19 {
+
+    width: 308px;
+    height: 76px;
+    left: 99px;
+    top: 1110px;
+    background: rgba(0, 176, 240, 0.52);
+    border-radius: 50px;
+  }
+  
+  /* # 나의 MZ력은? */
+  
+  .mz-power {
+    width: 167px;
+    height: 46px;
+    left: 191px;
+    top: 1080px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    background-image: linear-gradient(
+        rgba(0 0 0 / 0) 30%,
+        rgba(0, 176, 240, 0.52) 70%
+    );
+  }
+  
+  /* Rectangle 25 */
+  
+  .rectangle25 {
+    width: 132px;
+    height: 10px;
+    left: 187px;
+    top: 1088px;
+    background: rgba(0, 176, 240, 0.38);
   }
   
   /* MZ테스트 */
   
   .mz-test {
-    position: absolute;
+
     width: 198px;
     height: 75px;
     left: 175px;
@@ -271,37 +198,50 @@
     color: #000000;
   }
   
-  /* Rectangle 25 */
+  /* dict_btn */
   
-  .rectangle25 {
+  .dict_btn {
     position: absolute;
-    width: 132px;
-    height: 10px;
-    left: 187px;
-    top: 1088px;
-    background: rgba(0, 176, 240, 0.38);
+    width: 320px;
+    height: 380px;
+    left: 1098px;
+    top: 650px;
   }
   
-  /* # 나의 MZ력은? */
+  /* dictionary_ic */
   
-  .mz-power {
-    position: absolute;
-    width: 167px;
-    height: 46px;
-    left: 191px;
-    top: 1080px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    color: #000000;
+  .dictionary_ic {
+    width: 220px;
+    height: 220px;
+    left: 1170px;
+    top: 816px;
+    background-image: url(../mainImg/dictionary_ic.png);
+  }
+  
+  /* Rectangle 29 */
+  
+  .rectangle29 {
+    width: 308px;
+    height: 76px;
+    left: 1098px;
+    top: 1110px;
+    background: rgba(0, 176, 240, 0.52);
+    border-radius: 50px;
+  }
+  
+  /* Rectangle 27 */
+  
+  .rectangle27 {
+    width: 225px;
+    height: 10px;
+    left: 1142px;
+    top: 1083px;
+    background: rgba(0, 176, 240, 0.38);
   }
   
   /* 도감 */
   
   .dictionary {
-    position: absolute;
     width: 198px;
     height: 75px;
     left: 1224px;
@@ -317,7 +257,6 @@
   /* #세대 간 소통을 위한 A to Z */
   
   .a-to-z {
-    position: absolute;
     width: 285px;
     height: 46px;
     left: 1146px;
@@ -328,5 +267,64 @@
     font-size: 18px;
     line-height: 22px;
     color: #000000;
+    background-image: linear-gradient(
+        rgba(0 0 0 / 0) 30%,
+        rgba(0, 176, 240, 0.52) 70%
+    );
+  }
+  
+  /* transmeme_btn */
+  
+  .transmeme_btn {
+    position: absolute;
+    width: 230px;
+    height: 356.44px;
+    left: 649px;
+    top: 150px;
+  }
+  
+  /* transferlogo */
+  
+  .transferlogo {
+    width: 180px;
+    height: 34.44px;
+    left: 50%;
+    background-image: url(../mainImg/transferlogo.png);
+  }
+  
+  /* transfer_ic */
+  
+  .transfer_ic {
+    width: 220px;
+    height: 230px;
+    left: 649px;
+    top: 231px;
+    background-image: url(../mainImg/transfer_ic.png);
+  }
+  
+  /* 세대 통합을 위한 밈검색 */
+  
+  .mem-search {
+    width: 336px;
+    height: 52px;
+    left: 50%;
+    top: 512px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+  }
+  
+  /* mainlogo */
+  
+  .mainlogo {
+    position: absolute;
+    width: 300px;
+    height: 47.15px;
+    left: 617px;
+    top: 65px;
+    background-image: url(../mainImg/mainlogo.png);
   }
   
