@@ -4,6 +4,8 @@ import logoFont from "../fonts/logo.ttf";
 import mainFont from "../fonts/main.ttf";
 import o_btn from "../mainImg/o_btn.png";
 import x_btn from "../mainImg/x_btn.png";
+import o_ic from "../mainImg/o_ic.png";
+import image5 from "../mainImg/image 5.png"
 
 export const fontFace = css`
   @font-face {
@@ -412,4 +414,221 @@ export const DisagreeContent_1 = styled.div`
   margin-top: 30px;
 `;
 
-// 추가적인 스타일을 정의할 수 있습니다.
+// Page2
+export const Number = styled.h1`
+  font-size: 50px;
+  color: black;
+  margin-top: 30px;
+  span {
+    color: #00B0F0;
+  }
+`;
+
+export const QuizBox = styled.div`
+  background-color: rgba(0, 176, 240, 0.37);
+  border-radius: 50px;
+  display: inline-block;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+`;
+
+export const BlackText = styled.h1`
+  margin-left: 60px;
+  margin-right: 60px;
+  font-size: 35px;
+  color: black;
+  font-family: "main_f", sans-serif;
+  font-weight: 900;
+  ${fontFace};
+  wordwrap: "break-word";
+`;
+
+export const Divider = styled.hr`
+  width: 80%;
+  margin-top: -20px;
+  border: 10;
+  border-top: 1px solid #ddd; /* 구분선 색상과 스타일 지정 */
+`;
+
+export const BalanceContainer = styled.div`
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  gap: 150px;
+  margin-top: 50px;
+`;
+
+export const LeftButtonContainer = styled.div`
+  display: flex;
+  font-size: 30px;
+  color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "main_f", sans-serif;
+  font-weight: 900;
+  ${fontFace};
+  wordwrap: "break-word";
+  text-align: center;
+`;
+export const VSContainer = styled.div`
+  display: flex;
+  font-size: 30px;
+  color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "main_f", sans-serif;
+  font-weight: 900;
+  ${fontFace};
+  wordwrap: "break-word";
+`;
+export const RightButtonContainer = styled.div`
+  display: flex;
+  font-size: 30px;
+  color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "main_f", sans-serif;
+  font-weight: 900;
+  ${fontFace};
+  wordwrap: "break-word";
+  text-align: center;
+`;
+
+export const balanceSelect = styled.p`
+  font-size: 30px;
+  margin: 50px 0;
+  font-family: "main_f", sans-serif;
+  font-weight: 200;
+  ${fontFace};
+  wordwrap: "break-word";
+  text-align: center;
+`;
+
+export const VS = styled.p`
+  font-size: 30px;
+  margin: 25px 0;
+  color: #00b0f0;
+  font-family: "main_f", sans-serif;
+  font-weight: 600;
+  ${fontFace};
+  wordwrap: "break-word";
+`;
+
+//page2_result
+export const SelectContainer = styled.div`
+  position: absolute;
+  display: flex;
+  font-size: 30px;
+  color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "main_f", sans-serif;
+  font-weight: 900;
+  ${fontFace};
+  word-wrap: break-word;
+  text-align: center;
+  z-index: 2; /* 더 높은 z-index 값 설정 */
+
+  /* 나머지 스타일 */
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  z-index: 1; /* 더 낮은 z-index 값 설정 */
+
+  /* 나머지 스타일 */
+`;
+
+export const MainContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+`;
+
+export const NotSelectContainer = styled.div`
+  display: flex;
+  font-size: 30px;
+  color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "main_f", sans-serif;
+  font-weight: 900;
+  ${fontFace};
+  wordwrap: "break-word";
+  text-align: center;
+`;
+
+
+export const ResultText = styled.p`
+  font-size: 50px;
+  margin-top: 200px;
+  margin-left: 80px;
+  font-family: "main_f", sans-serif;
+  font-weight: 900;
+  ${fontFace};
+  word-wrap: break-word;
+  display: inline-block; /* 인라인 블록 요소로 설정 */
+`;
+
+export const ShareImageContainer = styled.div`
+  margin-top: 110px;
+  display: inline-block; /* 인라인 블록 요소로 설정 */
+
+  /* 나머지 스타일 */
+`;
+
+export const ResultContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  /* 나머지 스타일 */
+`;
+
+
+export const GoHomeBox =  styled(NavLink)`
+  margin-top: 80px;
+  background-color: rgba(0, 176, 240, 0.37);
+  border-radius: 50px;
+  display: inline-block;
+  text-decoration: none;
+`;
+
+
+// Group 15
+export const Group15 = styled.div`
+  position: absolute;
+  width: 133px;
+  height: 25px;
+  left: 140px;
+  top: 225px;
+`;
+
+// image 5
+export const Image5 = styled.div`
+  position: absolute;
+  width: 28px;
+  height: 19px;
+  left: 140px;
+  top: 225px;
+  background: url(${image5});
+`;
+
+// 세대 선택
+export const GenerationSelection = styled.div`
+  position: absolute;
+  width: 99px;
+  height: 25px;
+  left: 176px;
+  top: 225px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+`;

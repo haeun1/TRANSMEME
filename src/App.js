@@ -6,6 +6,8 @@ import Page0 from './components/Page0';
 import Page1 from './components/Page1'; // Page1.js로부터 컴포넌트를 import
 import Page2 from './components/Page2'; // Page2.js로부터 컴포넌트를 import
 import Page3 from './components/Page3'; // Page3.js로부터 컴포넌트를 import
+import Page1_start from './components/Page1_start';
+import Page2_result from './components/Page2_result';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route path="/page1" element={<Page1 />} />
         <Route path="/page2" element={<Page2 />} />
         <Route path="/page3" element={<Page3 />} />
+        <Route path="/page1_start" element={<Page1_start />} />
+        <Route path="/page2_result" element={<Page2_result />} />
       </Routes>
     </Router>
   );

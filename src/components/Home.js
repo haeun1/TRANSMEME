@@ -17,7 +17,7 @@ const Home = () => {
 
       <div className="line6" />
 
-      <Link to="/page1">
+      <Link to="/page1_start">
         <div className="mztest_btn">
           <div className="exam_ic" />
           <p><span className="mz-power"># 나의 MZ력은?</span></p>

@@ -1,8 +1,7 @@
 // Page2.js
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Container, CenteredImage, Title } from "./TitleStyle";
-import { Number, QuizBox, BlackText } from "./Page2Style";
+import { Container, CenteredImage, Title,Number,QuizBox,BlackText,
+  BalanceContainer,balanceSelect,LeftButtonContainer,RightButtonContainer,VS,VSContainer} from "./TitleStyle";
 import mainLogo from "../mainImg/mainlogo.png";
 
 const Page2 = () => {
@@ -15,9 +14,19 @@ const Page2 = () => {
         <span>0</span>1
       </Number>
       <QuizBox>
-        <BlackText>검정색 글씨</BlackText>
+        <BlackText>머선129?</BlackText>
       </QuizBox>
-      <NavLink to="/">메인 화면으로 이동</NavLink>
+      <BalanceContainer>
+        <LeftButtonContainer>
+          <balanceSelect>무슨일이야?</balanceSelect>
+        </LeftButtonContainer>
+        <VSContainer>
+        <VS>VS</VS>
+        </VSContainer>   
+        <RightButtonContainer>
+          <balanceSelect>친구미선의<br />별명</balanceSelect>
+        </RightButtonContainer>
+      </BalanceContainer>
     </Container>
   );
 };
