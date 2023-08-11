@@ -598,14 +598,15 @@ export const GoHomeBox =  styled(NavLink)`
   text-decoration: none;
 `;
 
+//Page3.js
 
 // Group 15
 export const Group15 = styled.div`
   position: absolute;
-  width: 133px;
-  height: 25px;
-  left: 140px;
-  top: 225px;
+  width: 200px;
+  height: 50px;
+  left: 10px;
+  top: 0px;
 `;
 
 // image 5
@@ -632,3 +633,399 @@ export const GenerationSelection = styled.div`
   line-height: 23px;
   color: #000000;
 `;
+
+
+// Group 40
+export const Group40 = styled.div`
+  position: absolute;
+  width: 147px;
+  height: 117px;
+  left: 50px;
+  top: 5px;
+`;
+
+// Line 29, 30, and 31
+export const Line = styled.div`
+  position: absolute;
+  width: 130px;
+  height: 0px;
+  left: 94px;
+  border: 1px solid #ABABAB;
+
+  // Modify top position based on props
+  top: ${props => props.topPosition || '0px'};
+`;
+
+// X (70-80), M (81-94), and Z (95-2012)
+export const Label = styled.div`
+  position: absolute;
+  width: ${props => props.width || '99px'};
+  height: 25px;
+  left: ${props => props.left || '102px'};
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  color: #000000;
+
+  // Modify top position based on props
+  top: ${props => props.topPosition || '0px'};
+`;
+
+
+// ㄱ Wrapper
+export const Wrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 283px;
+  left: 45px;
+  top: 25px;
+`;
+
+// Rectangle 19
+export const Rectangle19 = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 61px;
+  left: 403px;
+  top: 329px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// ㄱ
+export const Character = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 51px;
+  left: 461px;
+  top: 338px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+// 가즈아 - Since this component is repeated multiple times, we'll use props to adjust positions
+export const TextLabel = styled.div`
+  position: absolute;
+  width: 80px;
+  height: 27px;
+  left: ${props => props.left || '392px'};
+  top: ${props => props.top};
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  color: #000000;
+`;
+
+
+// ㄴ Wrapper
+export const NWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 280px;
+  left: -70px;
+  top: 25px;
+`;
+
+// Rectangle 20
+export const Rectangle20 = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 61px;
+  left: 951px;
+  top: 329px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// ㄴ
+export const NCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 51px;
+  left: 1012px;
+  top: 338px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+// 가즈아 - Since this component is repeated multiple times, we'll use props to adjust positions
+export const NTextLabel = styled.div`
+  position: absolute;
+  width: 80px;
+  height: 27px;
+  left: ${props => props.left || '932px'};
+  top: ${props => props.top};
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  color: #000000;
+`;
+
+
+// ㄷ Wrapper
+export const DWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 286px;
+  left: 45px;
+  top: 50px;
+`;
+
+// Rectangle 21
+export const Rectangle21 = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 403px;
+  top: 667px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// ㄷ
+export const DCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 461px;
+  top: 678px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+// 가즈아 - Since this component is repeated multiple times, we'll use props to adjust positions
+export const DTextLabel = styled.div`
+  position: absolute;
+  width: 80px;
+  height: 27px;
+  left: ${props => props.left || '392px'};
+  top: ${props => props.top};
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  color: #000000;
+`;
+
+// ㄹ Wrapper
+export const LWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 283px;
+  left: -70px;
+  top: 50px;
+`;
+
+// Rectangle 22
+export const Rectangle22 = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 951px;
+  top: 667px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// ㄹ
+export const LCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 1012px;
+  top: 678px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+// 가즈아 - Since this component is repeated multiple times, we'll use props to adjust positions
+export const LTextLabel = styled.div`
+  position: absolute;
+  width: 80px;
+  height: 27px;
+  left: ${props => props.left || '932px'};
+  top: ${props => props.top};
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  color: #000000;
+`;
+
+
+//Page3_word.js
+
+
+// 단어해석 Wrapper
+export const WordTranslationWrapper = styled.div`
+  position: absolute;
+  width: 900px;
+  height: 60px;
+  left: calc(50% - 900px/2 - 62px);
+  top: 0px;
+`;
+
+// 가즈아
+export const WordLabel = styled.div`
+  position: absolute;
+  width: 167px;
+  height: 59px;
+  left: 89px;
+  top: 300px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+// (Z)
+export const ZLabel = styled.div`
+  position: absolute;
+  width: 125px;
+  height: 30px;
+  left: 197px;
+  top: 315px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ABABAB;
+`;
+
+// Line 27
+export const Line27 = styled.div`
+  position: absolute;
+  width: 900px;
+  height: 0px;
+  left: 89px;
+  top: 355px;
+  border: 1.5px solid #D9D9D9;
+`;
+
+export const Description = styled.div`
+  position: absolute;
+  width: 826px;
+  height: 21px;
+  left: 335px;
+  top: 400px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+`;
+
+
+// 예문 Wrapper
+const ExampleWrapper = styled.div`
+  position: absolute;
+  width: 272px;
+  height: 103px;
+  left: 40px;
+  top: 0px;
+`;
+
+// 예문 Title
+const ExampleTitle = styled.div`
+  position: absolute;
+  width: 105px;
+  height: 33px;
+  left: 369px;
+  top: 571px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #00B0F0;
+`;
+
+// 예문 Content
+const ExampleContent = styled.div`
+  position: absolute;
+  width: 272px;
+  height: 63px;
+  left: 369px;
+  top: 611px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+`;
+
+export { ExampleWrapper, ExampleTitle, ExampleContent };
+
+// Group 41 Wrapper
+const Group41Wrapper = styled.div`
+  position: absolute;
+  width: 276px;
+  height: 100px;
+  left: 10px;
+  top: 0px;
+`;
+
+// 다른 세대 유사 단어 Title
+const SimilarWordTitle = styled.div`
+  position: absolute;
+  width: 206px;
+  height: 30px;
+  left: 857px;
+  top: 571px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ABABAB;
+`;
+
+// ㄹㅊㄱ (Z) 돌진! (X) Content
+const WordContent = styled.div`
+  position: absolute;
+  width: 272px;
+  height: 63px;
+  left: 861px;
+  top: 608px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+`;
+
+export { Group41Wrapper, SimilarWordTitle, WordContent };
