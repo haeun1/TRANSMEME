@@ -412,4 +412,45 @@ export const DisagreeContent_1 = styled.div`
   margin-top: 30px;
 `;
 
+export const NextButton_1 = styled.button`
+  margin-top: 50px;
+  width: 200px;
+  height: 50px;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #35c1f396;
+  font-family: "main_f", sans-serif;
+  font-weight: 300;
+  ${fontFace};
+`;
+export const MainContent_1 = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+  font-family: "main_f", sans-serif;
+  font-weight: 300;
+  ${fontFace};
+`;
+export const CenteredImage_1_result = styled.img`
+  padding: 80px;
+`;
+export const Title_1_result = styled.div`
+  display: flex;
+  font-size: 50px;
+  font-family: "logo_f", sans-serif;
+  font-weight: 300;
+  ${fontFace};
+`;
+export const Type_1_result = styled.div`
+  color: #87daf8;
+`;
+export const TypeImage_1_result = styled.img`
+  margin-top: 50px;
+  height: 300px;
+  width: 300px;
+`;
+
 // 추가적인 스타일을 정의할 수 있습니다.

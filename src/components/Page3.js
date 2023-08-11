@@ -10,7 +10,7 @@ const Page3 = () => {
     <Container>
       <CenteredImage src={mainLogo} />
       <Title>도감</Title>
-      <Divider />
+
       <NavLink to="/">메인 화면으로 이동</NavLink>
     </Container>
   );
