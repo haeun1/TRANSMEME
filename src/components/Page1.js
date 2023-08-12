@@ -7,6 +7,7 @@ import {
   CenteredImage,
   Title,
   ImageLink,
+  ImageLink_1,
   SmallImage_0,
   ColorTitle_1,
   Container_1,
@@ -19,6 +20,7 @@ import {
   DisagreeButton_1,
   AgreeContent_1,
   DisagreeContent_1,
+  NextButton_1,
 } from "./TitleStyle";
 import mainButtonImage from "../mainImg/home_btn.png";
 import mainLogo from "../mainImg/mainlogo.png";
@@ -48,6 +50,9 @@ const Page1 = () => {
           </DisAgreeButtonContainer_1>
         </ButtonContainer_1>
       </Container_1>
+      <ImageLink_1 to="/page1_result">
+        <NextButton_1>결과보기</NextButton_1>
+      </ImageLink_1>
 
       <ImageLink to="/">
         <SmallImage_0 src={mainButtonImage} alt="메인 화면으로 이동" />
