@@ -171,7 +171,7 @@ export const ImageLink = styled(NavLink)`
 `;
 export const ImageLink_0 = styled(NavLink)``;
 export const ImageLink_1 = styled(NavLink)`
-  margin-top: 100px;
+  padding: 40px;
 `;
 
 export const SmallImage_0 = styled.img`
@@ -220,14 +220,22 @@ export const BoxTitle_0 = styled.h2`
   margin-bottom: 50px;
 `;
 
-export const BoxContent_input_0 = styled.p`
+export const BoxContent_input_0 = styled.textarea`
+  width: 465px;
+  height: 130px;
   font-size: 40px;
-  margin-top: -20px;
-  padding: 40px;
+  margin-top: 10px;
+  margin-left: 27px;
+  padding: 10px;
+  border: none;
   font-family: "main_f", sans-serif;
   font-weight: 200;
   ${fontFace};
+  cursor: pointer;
+  vertical-align: text-top;
+  resize: none; /* 사용자 크기 조절 비활성화 */
 `;
+
 export const BoxContent_0 = styled.p`
   font-size: 40px;
   margin-top: -20px;

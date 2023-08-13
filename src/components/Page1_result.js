@@ -62,6 +62,7 @@ import mainLogo from "../mainImg/mainlogo.png";
 import typeimg from "../mainImg/ggondae_ic.png";
 import sharebutton from "../mainImg/share_btn.png";
 import o_btn from "../mainImg/o_btn.png";
+import o_btn_remove from "../mainImg/o_btn_remove.png";
 import x_btn from "../mainImg/x_btn.png";
 
 const Page1_result = () => {
@@ -142,7 +143,11 @@ const Page1_result = () => {
           <StatisticTitle_1_result>통계</StatisticTitle_1_result>
           <Line_1_result></Line_1_result>
 
-          <ColoredCircleBackground_1_result left={300} top={120} src={o_btn} />
+          <ColoredCircleBackground_1_result
+            left={300}
+            top={120}
+            src={o_btn_remove}
+          />
           <ColoredCircleForeground_1_result left={430} top={120} src={x_btn} />
 
           <GenerationLabel_1_result left={170} top={190}>
@@ -176,7 +181,11 @@ const Page1_result = () => {
             0<ColorTitle_1>1</ColorTitle_1>
           </NumberSpan_1_result>
 
-          <ColoredCircleBackground_1_result left={710} top={120} src={o_btn} />
+          <ColoredCircleBackground_1_result
+            left={710}
+            top={120}
+            src={o_btn_remove}
+          />
           <ColoredCircleForeground_1_result left={840} top={120} src={x_btn} />
 
           <GenerationLabel_1_result left={580} top={190}>

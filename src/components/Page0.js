@@ -52,6 +52,11 @@ const Page0 = () => {
     "Player 9",
     "Player 10",
   ];
+  const [content, setContent] = useState("내용");
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
+  };
 
   useEffect(() => {
     setRankings(initialRankings);
@@ -80,7 +85,11 @@ const Page0 = () => {
           <Box_input_0>
             <BoxTitle_0></BoxTitle_0>
             <Box_Divider_0 />
-            <BoxContent_input_0>내용 1</BoxContent_input_0>
+            <BoxContent_input_0
+              type="text"
+              value={content}
+              onChange={handleContentChange}
+            />
             <Button_0>번역하기</Button_0>
           </Box_input_0>
           <DividerImage_0 src={translateButtonImage} alt="분리 이미지" />
