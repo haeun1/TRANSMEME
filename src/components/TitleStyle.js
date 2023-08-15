@@ -5,7 +5,7 @@ import mainFont from "../fonts/main.ttf";
 import o_btn from "../mainImg/o_btn.png";
 import x_btn from "../mainImg/x_btn.png";
 import o_ic from "../mainImg/o_ic.png";
-import image5 from "../mainImg/image 5.png"
+import image5 from "../mainImg/image 5.png";
 
 export const fontFace = css`
   @font-face {
@@ -68,6 +68,7 @@ export const Ranking_0 = styled.div`
 export const DictContainer_0 = styled.div`
   height: 600px;
   font-family: "main_f", sans-serif;
+  align-items: center;
   font-weight: 200;
   ${fontFace};
 `;
@@ -85,14 +86,12 @@ export const DictContent_0 = styled.div`
   margin-top: 50px;
 `;
 
-export const Downarrow_0 = styled.div`
-  text-align: center;
-  margin-top: -90px;
-  font-family: "main_f", sans-serif;
-  font-weight: 200;
-  ${fontFace};
-  color: #00b0f0;
-  font-size: 80px;
+export const Downarrow_0 = styled.img`
+  width: 79px;
+  height: 35px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: -60px;
 `;
 
 export const DictContent_MainWord_0 = styled.div`
@@ -170,6 +169,10 @@ export const ImageLink = styled(NavLink)`
   top: 77px;
   right: 100px;
 `;
+export const ImageLink_0 = styled(NavLink)``;
+export const ImageLink_1 = styled(NavLink)`
+  padding: 40px;
+`;
 
 export const SmallImage_0 = styled.img`
   width: 70px;
@@ -217,14 +220,22 @@ export const BoxTitle_0 = styled.h2`
   margin-bottom: 50px;
 `;
 
-export const BoxContent_input_0 = styled.p`
+export const BoxContent_input_0 = styled.textarea`
+  width: 465px;
+  height: 130px;
   font-size: 40px;
-  margin-top: -20px;
-  padding: 40px;
+  margin-top: 10px;
+  margin-left: 27px;
+  padding: 10px;
+  border: none;
   font-family: "main_f", sans-serif;
   font-weight: 200;
   ${fontFace};
+  cursor: pointer;
+  vertical-align: text-top;
+  resize: none; /* 사용자 크기 조절 비활성화 */
 `;
+
 export const BoxContent_0 = styled.p`
   font-size: 40px;
   margin-top: -20px;
@@ -262,6 +273,11 @@ export const ColorTitle_1 = styled.span`
 
 export const CenteredImage_1_start = styled.img`
   margin-top: 100px;
+  padding: 50px;
+  width: 300px;
+`;
+export const CenteredImage_1_result = styled.img`
+  margin-top: 20px;
   padding: 50px;
   width: 300px;
 `;
@@ -414,13 +430,383 @@ export const DisagreeContent_1 = styled.div`
   margin-top: 30px;
 `;
 
+export const NextButton_1 = styled.button`
+  background-color: #87daf8;
+  margin-top: 50px;
+  border: none;
+  width: 240px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 500px;
+  font-family: "main_f", sans-serif;
+  font-weight: 900;
+  ${fontFace};
+  cursor: pointer;
+`;
+
+export const Typecontent_1_result = styled.div`
+  display: flex;
+  font-family: "logo_f", sans-serif;
+  font-weight: 700;
+  ${fontFace};
+  font-size: 40px;
+`;
+export const Type_1_result = styled.div`
+  color: #87daf8;
+`;
+export const TypeImage_1_result = styled.img`
+  color: #87daf8;
+  margin-top: 80px;
+`;
+
+export const ShareButton_1_result = styled.img`
+  color: #87daf8;
+  position: absolute;
+  right: 670px;
+  top: 250px;
+`;
+
+export const MainContainer_1 = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  font-family: "main_f", sans-serif;
+  font-weight: 500;
+  ${fontFace};
+
+  font-size: 23px;
+`;
+export const FeatureContainer_1 = styled.div`
+  border-radius: 20px;
+  background-color: #87daf8;
+`;
+export const Feature_1 = styled.div`
+  padding: 50px;
+  color: white;
+  font-size: 35px;
+  font-weight: 900;
+`;
+export const FeatureContent_1 = styled.div`
+  display: flex;
+  padding: 50px;
+  width: 90%;
+  margin-top: -60px;
+  justify-content: center; /* 가운데 정렬 설정 */
+`;
+
+export const CommentContainer_1 = styled.div`
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+`;
+
+export const CommentBox_1 = styled.div`
+  width: 100%;
+  height: 100px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: white;
+  border-radius: 15px;
+  border: 0.5px #ababab solid;
+`;
+export const CommentTitle_1 = styled.div`
+  width: 275px;
+  height: 50px;
+  left: 55px;
+  top: 30px;
+  position: absolute;
+  color: #00b0f0;
+  font-size: 40px;
+  font-family: "Gmarket Sans TTF";
+  font-weight: 700;
+  word-wrap: break-word;
+`;
+export const Verticalbar_1 = styled.div`
+  width: 75px;
+  height: 0;
+  left: 288px;
+  top: 90px;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  border: 0.5px #ababab solid;
+`;
+export const DataContainer_1 = styled.div``;
+export const DataTitle_1 = styled.div``;
+
+export const CenteredImage_main = styled.img`
+  margin-top: 150px;
+  padding: 20px;
+  width: 300px;
+`;
+
+export const Title_main = styled.div`
+  font-family: "logo_f", sans-serif;
+  font-weight: 300;
+  font-size: 60px;
+  ${fontFace};
+  padding-bottom: 50px;
+`;
+export const Downarrow_main = styled.img`
+  width: 79px;
+  height: 35px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: px;
+`;
+
+export const StartLink_main = styled(NavLink)`
+  margin-top: 60px;
+  text-decoration: none; /* 밑줄 없애기 */
+  color: black;
+  font-size: 30px;
+  font-family: "main_f", sans-serif;
+  font-weight: 700;
+  ${fontFace};
+`;
+export const Container_1_result = styled.div`
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin-top: 170px;
+  padding-bottom: 80px;
+  font-family: "main_f", sans-serif;
+  font-weight: 400;
+  ${fontFace};
+`;
+
+export const WhiteBox_1_result = styled.div`
+  width: 100%;
+  height: 500px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: white;
+  border-radius: 15px;
+  border: 0.5px #ababab solid;
+`;
+
+export const Title_1_result = styled.div`
+  width: 352px;
+  height: 175.73px;
+  left: 48px;
+  top: 78.86px;
+  position: absolute;
+  color: #00b0f0;
+  font-size: 35px;
+  font-family: "Gmarket Sans TTF";
+  font-weight: 700;
+  word-wrap: break-word;
+`;
+
+export const TimeLine_1_result_1 = styled.div`
+  width: 300px;
+  border: 0.5px #ababab solid;
+  position: absolute;
+  left: 47px;
+  top: 164px;
+`;
+export const TimeLine_1_result_2 = styled.div`
+  width: 300px;
+  border: 0.5px #ababab solid;
+  position: absolute;
+  right: 47px;
+  top: 164px;
+`;
+export const Background_1_result = styled.div`
+  width: 90%;
+  height: 100px;
+  left: 0;
+  top: 0;
+  left: 38px;
+  top: 211px;
+  position: absolute;
+  background: #f5f5f5;
+  border-radius: 15px;
+`;
+
+export const RotateLine_1_result = styled.div`
+  width: 52px;
+  height: 0;
+  left: 197px;
+  top: 288px;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  border: 1.5px white solid;
+`;
+
+export const TimeLabel_1_result = styled.div`
+  width: 101px;
+  height: 43px;
+  position: absolute;
+  left: 880px;
+  top: 284px;
+
+  color: #ababab;
+  font-size: 16px;
+  font-weight: 400;
+  word-wrap: break-word;
+`;
+export const DateLabel_1_result = styled.div`
+  width: 180px;
+  height: 43px;
+  position: absolute;
+  left: 420px;
+  top: 146px;
+`;
+
+export const CommentBubble_1_result = styled.div`
+  width: 346px;
+  height: 42px;
+  position: absolute;
+  left: 222px;
+  top: 252px;
+  color: black;
+  font-size: 25px;
+  font-family: "Gmarket Sans";
+  font-weight: 400;
+  word-wrap: break-word;
+`;
+
+export const NameLabel_1_result = styled.div`
+  width: 123px;
+  height: 57px;
+  position: absolute;
+  left: 66px;
+  top: 246px;
+  color: black;
+  font-size: 30px;
+  font-weight: 700;
+  word-wrap: break-word;
+`;
+
+export const Background1_1_result = styled.div`
+  width: 100%;
+  height: 500px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: #87daf8;
+  border-radius: 15px;
+  border: 0.5px #ababab solid;
+`;
+
+export const StatisticContainer_1_result = styled.div`
+  width: 100%;
+  height: 500px;
+  position: relative;
+`;
+export const StatisticTitle_1_result = styled.div`
+  font-family: "main_f", sans-serif;
+  font-weight: 700;
+  position: absolute;
+  ${fontFace};
+  color: white;
+  font-size: 30px;
+  top: 50px;
+  left: 50px;
+`;
+export const Line_1_result = styled.div`
+  position: absolute;
+  width: 65px;
+  color: white;
+  top: 90px;
+  left: 45px;
+  border: 1px white solid;
+`;
+export const StatisticContainer1_1_result = styled.div`
+  width: 100%;
+  height: 500px;
+  position: relative;
+  font-family: "main_f", sans-serif;
+  font-weight: 800;
+  ${fontFace};
+`;
+export const AbsoluteImage_1_result = styled.img`
+  width: 45px;
+  height: 45px;
+  left: 259px;
+  top: 0;
+  position: absolute;
+`;
+
+export const ColoredCirclesWrapper_1_result = styled.div`
+  width: 50px;
+  height: 50px;
+  left: 137px;
+  top: 0;
+  position: absolute;
+`;
+
+export const ColoredCircleBackground_1_result = styled.img`
+  width: 50px;
+  height: 50px;
+  left: ${({ left }) => left}px;
+  top: ${({ top }) => top}px;
+
+  position: absolute;
+`;
+
+export const ColoredCircleForeground_1_result = styled.img`
+  width: 50px;
+  height: 50px;
+  left: ${({ left }) => left}px;
+  top: ${({ top }) => top}px;
+
+  position: absolute;
+`;
+
+export const GenerationLabel_1_result = styled.div`
+  width: 81px;
+  height: 40px;
+  left: ${({ left }) => left}px;
+  top: ${({ top }) => top}px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: "main_f", sans-serif;
+  font-weight: 700;
+  ${fontFace};
+  word-wrap: break-word;
+`;
+
+export const PercentageLabel_1_result = styled.div`
+  width: 81px;
+  height: 40px;
+  left: ${({ left }) => left}px;
+  top: ${({ top }) => top}px;
+  position: absolute;
+  color: black;
+  font-family: "main_f", sans-serif;
+  font-weight: 700;
+  ${fontFace};
+  word-wrap: break-word;
+`;
+
+export const NumberSpan_1_result = styled.span`
+  color: ${({ color }) => color};
+  left: ${({ left }) => left}px;
+  top: ${({ top }) => top}px;
+
+  position: absolute;
+  font-size: 40px;
+  font-family: "main_f", sans-serif;
+  font-weight: 700;
+  ${fontFace};
+`;
+
 // Page2
 export const Number = styled.h1`
   font-size: 50px;
   color: black;
   margin-top: 30px;
   span {
-    color: #00B0F0;
+    color: #00b0f0;
   }
 `;
 
@@ -563,7 +949,6 @@ export const NotSelectContainer = styled.div`
   text-align: center;
 `;
 
-
 export const ResultText = styled.p`
   font-size: 50px;
   margin-top: 200px;
@@ -589,8 +974,7 @@ export const ResultContainer = styled.div`
   /* 나머지 스타일 */
 `;
 
-
-export const GoHomeBox =  styled(NavLink)`
+export const GoHomeBox = styled(NavLink)`
   margin-top: 80px;
   background-color: rgba(0, 176, 240, 0.37);
   border-radius: 50px;
@@ -634,7 +1018,6 @@ export const GenerationSelection = styled.div`
   color: #000000;
 `;
 
-
 // Group 40
 export const Group40 = styled.div`
   position: absolute;
@@ -650,18 +1033,18 @@ export const Line = styled.div`
   width: 130px;
   height: 0px;
   left: 94px;
-  border: 1px solid #ABABAB;
+  border: 1px solid #ababab;
 
   // Modify top position based on props
-  top: ${props => props.topPosition || '0px'};
+  top: ${(props) => props.topPosition || "0px"};
 `;
 
 // X (70-80), M (81-94), and Z (95-2012)
 export const Label = styled.div`
   position: absolute;
-  width: ${props => props.width || '99px'};
+  width: ${(props) => props.width || "99px"};
   height: 25px;
-  left: ${props => props.left || '102px'};
+  left: ${(props) => props.left || "102px"};
   font-family: "main_f", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -670,9 +1053,8 @@ export const Label = styled.div`
   color: #000000;
 
   // Modify top position based on props
-  top: ${props => props.topPosition || '0px'};
+  top: ${(props) => props.topPosition || "0px"};
 `;
-
 
 // ㄱ Wrapper
 export const Wrapper = styled.div`
@@ -715,8 +1097,8 @@ export const TextLabel = styled.div`
   position: absolute;
   width: 80px;
   height: 27px;
-  left: ${props => props.left || '392px'};
-  top: ${props => props.top};
+  left: ${(props) => props.left || "392px"};
+  top: ${(props) => props.top};
   font-family: "main_f", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -724,7 +1106,6 @@ export const TextLabel = styled.div`
   line-height: 29px;
   color: #000000;
 `;
-
 
 // ㄴ Wrapper
 export const NWrapper = styled.div`
@@ -767,8 +1148,8 @@ export const NTextLabel = styled.div`
   position: absolute;
   width: 80px;
   height: 27px;
-  left: ${props => props.left || '932px'};
-  top: ${props => props.top};
+  left: ${(props) => props.left || "932px"};
+  top: ${(props) => props.top};
   font-family: "main_f", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -776,7 +1157,6 @@ export const NTextLabel = styled.div`
   line-height: 29px;
   color: #000000;
 `;
-
 
 // ㄷ Wrapper
 export const DWrapper = styled.div`
@@ -819,8 +1199,8 @@ export const DTextLabel = styled.div`
   position: absolute;
   width: 80px;
   height: 27px;
-  left: ${props => props.left || '392px'};
-  top: ${props => props.top};
+  left: ${(props) => props.left || "392px"};
+  top: ${(props) => props.top};
   font-family: "main_f", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -870,8 +1250,8 @@ export const LTextLabel = styled.div`
   position: absolute;
   width: 80px;
   height: 27px;
-  left: ${props => props.left || '932px'};
-  top: ${props => props.top};
+  left: ${(props) => props.left || "932px"};
+  top: ${(props) => props.top};
   font-family: "main_f", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -880,16 +1260,14 @@ export const LTextLabel = styled.div`
   color: #000000;
 `;
 
-
 //Page3_word.js
-
 
 // 단어해석 Wrapper
 export const WordTranslationWrapper = styled.div`
   position: absolute;
   width: 900px;
   height: 60px;
-  left: calc(50% - 900px/2 - 62px);
+  left: calc(50% - 900px / 2 - 62px);
   top: 0px;
 `;
 
@@ -920,7 +1298,7 @@ export const ZLabel = styled.div`
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
-  color: #ABABAB;
+  color: #ababab;
 `;
 
 // Line 27
@@ -930,7 +1308,7 @@ export const Line27 = styled.div`
   height: 0px;
   left: 89px;
   top: 355px;
-  border: 1.5px solid #D9D9D9;
+  border: 1.5px solid #d9d9d9;
 `;
 
 export const Description = styled.div`
@@ -946,7 +1324,6 @@ export const Description = styled.div`
   line-height: 20px;
   color: #000000;
 `;
-
 
 // 예문 Wrapper
 const ExampleWrapper = styled.div`
@@ -969,7 +1346,7 @@ const ExampleTitle = styled.div`
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
-  color: #00B0F0;
+  color: #00b0f0;
 `;
 
 // 예문 Content
@@ -1010,7 +1387,7 @@ const SimilarWordTitle = styled.div`
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
-  color: #ABABAB;
+  color: #ababab;
 `;
 
 // ㄹㅊㄱ (Z) 돌진! (X) Content
