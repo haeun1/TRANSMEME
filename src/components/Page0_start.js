@@ -42,14 +42,14 @@ import downarrowImage from "../mainImg/downarrow.png";
 const Page0 = () => {
   const pageNumber = 0;
   // //ranking
-  const [rankings, setRankings] = useState();
+  const [rankings, setRankings] = useState([]);
   const [currentRankingIndex, setCurrentRankingIndex] = useState(0);
   useEffect(() => {
     // 서버에서 초기 랭킹 데이터를 받아와서 상태에 저장
     axios
-      .get("http://52.79.219.32:8000/transememe/apitest/")
+      .get("http://52.79.219.32:8000/transmeme/apitest/")
       .then((response) => {
-        const rankingSubjects = response.data.count.map((item) => item.subject);
+        const rankingSubjects = response.data.count.map((word) => word.subject);
         setRankings(rankingSubjects);
       })
       .catch((error) => {
@@ -58,16 +58,17 @@ const Page0 = () => {
   }, []);
 
   useEffect(() => {
-    // 랭킹 변경을 위한 인터벌 설정
-    const interval = setInterval(() => {
-      setCurrentRankingIndex((prevIndex) =>
-        prevIndex === 9 ? 0 : prevIndex + 1
-      );
-    }, 3000); // 5초마다 순위 변경 (원하는 시간으로 조정)
+    if (rankings.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentRankingIndex((prevIndex) =>
+          prevIndex === rankings.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000); // 3초마다 순위 변경 (원하는 시간으로 조정)
 
-    return () => {
-      clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 클리어
-    };
+      return () => {
+        clearInterval(interval);
+      };
+    }
   }, [rankings]);
 
   const [inputContent, setInputContent] = useState(""); // 입력한 내용
@@ -116,6 +117,17 @@ const Page0 = () => {
       <MainContent_0>
         <CenteredImage src={mainLogo} />
         <Title>트랜스밈</Title>
+        {/* {translatedValue !== null && (
+          <RankingContainer_0>
+            <Verticalbar_0 />
+            <RankingContent_0>많이 찾는 번역</RankingContent_0>
+            <Ranking_0>
+              {`${currentRankingIndex + 1}위: ${
+                rankings && rankings[currentRankingIndex]
+              }`}
+            </Ranking_0>
+          </RankingContainer_0>
+        )} */}{" "}
         {translatedValue !== null && (
           <RankingContainer_0>
             <Verticalbar_0 />
