@@ -21,6 +21,7 @@ import mainLogo from "../mainImg/mainlogo.png";
 import mainButtonImage from "../mainImg/home_btn.png";
 
 const Page3_word = () => {
+
   return (
     <Container>
       <CenteredImage src={mainLogo} />

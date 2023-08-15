@@ -1,11 +1,14 @@
 // Page2.js
-import React from "react";
+import React,{useState,useEffect} from "react";
+import axios from 'axios';
 import { Container, CenteredImage, Title,Number,QuizBox,BlackText,
   BalanceContainer,balanceSelect,LeftButtonContainer,RightButtonContainer,VS,VSContainer} from "./TitleStyle";
 import mainLogo from "../mainImg/mainlogo.png";
 
 const Page2 = () => {
   const pageNumber = 2; // 페이지 번호를 변수로 설정
+  
+  
   return (
     <Container>
       <CenteredImage src={mainLogo} />
