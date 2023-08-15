@@ -8,7 +8,6 @@ import mainButtonImage from "../mainImg/home_btn.png";
 
 const Page3_word = () => {
  
-
   return (
     <Container>
       <CenteredImage src={mainLogo} />

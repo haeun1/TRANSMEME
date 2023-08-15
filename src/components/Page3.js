@@ -1,5 +1,6 @@
 // Page3.js
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Container, CenteredImage, Title,SmallImage_0,ImageLink,Divider_0,Group15,Image5,GenerationSelection
 ,Group40,Line,Label,Wrapper,Rectangle19,Character,TextLabel,NWrapper,Rectangle20,NCharacter,NTextLabel,DCharacter,DTextLabel
@@ -14,6 +15,33 @@ const Page3 = () => {
   const handleGroupClick = () => {
     setShowGroup40(!showGroup40);  // showGroup40 토글
   };
+
+  const [data, setData] = useState({
+    words: [],
+    synonyms: [],
+    examples: []
+  });
+
+  const groupedWords = data.words.reduce((acc, word) => {
+    const firstLetter = word.subject.charAt(0);
+    if (!acc[firstLetter]) {
+      acc[firstLetter] = [];
+    }
+    acc[firstLetter].push(word);
+    return acc;
+  }, {});
+
+  useEffect(() => {
+    const apiUrl = 'http://52.79.219.32:8000/dictionary/apitest/'; // 여기에 Django API의 엔드포인트를 입력하세요.
+
+    axios.get(apiUrl)
+        .then((response) => {
+            setData(response.data);
+        })
+        .catch((error) => {
+            console.log("Error fetching data from Django API", error);
+        });
+}, []);
 
   return (
     <Container>
@@ -37,16 +65,11 @@ const Page3 = () => {
     <Wrapper>
       <Rectangle19 />
       <Character>ㄱ</Character>
-      <Link to="../page3_word"><TextLabel top="424px" left="392px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="424px" left="503px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="465px" left="392px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="465px" left="503px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="505px" left="392px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="505px" left="503px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="545px" left="392px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="545px" left="503px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="585px" left="392px">가즈아</TextLabel></Link>
-        <Link to="../page3_word"><TextLabel top="585px" left="503px">가즈아</TextLabel></Link>
+      {groupedWords["가"] && groupedWords["가"].map(word => (
+        <Link key={word.id} to="../page3_word">
+          <TextLabel>{word.subject}</TextLabel>
+        </Link>
+      ))}
     </Wrapper>
     <NWrapper>
       <Rectangle20 />
