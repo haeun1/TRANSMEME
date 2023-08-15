@@ -1,14 +1,7 @@
-// Page1.js
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
-  fontFace,
   Container,
-  CenteredImage,
-  Title,
-  ImageLink,
-  ImageLink_1,
-  SmallImage_0,
   ColorTitle_1,
   Container_1,
   Title_1,
@@ -22,14 +15,49 @@ import {
   DisagreeContent_1,
   NextButton_1,
 } from "./TitleStyle";
-import mainButtonImage from "../mainImg/home_btn.png";
-import mainLogo from "../mainImg/mainlogo.png";
-import o_btn from "../mainImg/o_btn.png";
-import x_btn from "../mainImg/x_btn.png";
-import styled from "styled-components";
 
-const Page1 = () => {
-  const pageNumber = 1; // 페이지 번호를 변수 로 설정
+const Page1 = ({ history }) => {
+  const [selectedValue, setSelectedValue] = useState(null);
+  const sendDataToServer = (choice) => {
+    let dataToSend = {
+      choice: choice === "동의" ? 1 : 2,
+    };
+
+    fetch("http://52.79.219.32:8000/dictionary/apitest/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log(responseData);
+        // 서버 응답을 처리하는 코드 작성
+      })
+      .catch((error) => {
+        console.error("Error sending data to server:", error);
+        // 오류 처리 코드 작성
+      });
+  };
+
+  const handleAgreeClick = () => {
+    sendDataToServer("동의");
+  };
+
+  const handleDisagreeClick = () => {
+    sendDataToServer("비동의");
+  };
+
+  const handleNextClick = () => {
+    if (selectedValue !== null) {
+      sendDataToServer(selectedValue);
+      history.push("/page1_2"); // 다음 페이지로 이동
+    } else {
+      console.log("Please make a choice before proceeding.");
+    }
+  };
+
   return (
     <Container>
       <Container_1>
@@ -41,22 +69,29 @@ const Page1 = () => {
         </Question_1>
         <ButtonContainer_1>
           <AgreeButtonContainer_1>
-            <AgreeButton_1></AgreeButton_1>
+            <AgreeButton_1
+              onClick={handleAgreeClick}
+              disabled={selectedValue !== null}
+            ></AgreeButton_1>
             <AgreeContent_1>동의</AgreeContent_1>
           </AgreeButtonContainer_1>
           <DisAgreeButtonContainer_1>
-            <DisagreeButton_1></DisagreeButton_1>
+            <DisagreeButton_1
+              onClick={handleDisagreeClick}
+              disabled={selectedValue !== null}
+            ></DisagreeButton_1>
             <DisagreeContent_1>비동의</DisagreeContent_1>
           </DisAgreeButtonContainer_1>
         </ButtonContainer_1>
       </Container_1>
-      <ImageLink_1 to="/page1_result">
-        <NextButton_1>결과보기</NextButton_1>
-      </ImageLink_1>
-
-      <ImageLink to="/">
-        <SmallImage_0 src={mainButtonImage} alt="메인 화면으로 이동" />
-      </ImageLink>
+      <NavLink to="/page1_2">
+        <NextButton_1
+          onClick={handleNextClick}
+          disabled={selectedValue === null}
+        >
+          다음
+        </NextButton_1>
+      </NavLink>
     </Container>
   );
 };

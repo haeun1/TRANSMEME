@@ -91,14 +91,16 @@ export const Downarrow_0 = styled.img`
   height: 35px;
   display: flex;
   margin: 0 auto;
-  margin-top: -60px;
+`;
+export const Downcontainer_0 = styled.div`
+  margin-top: -40px;
 `;
 
 export const DictContent_MainWord_0 = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  margin-top: -70px;
+  margin-top: 20px;
   & > :first-child {
     font-size: 50px;
   }

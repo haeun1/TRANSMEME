@@ -56,14 +56,14 @@ import {
   PercentageLabel_1_result,
   NumberSpan_1_result,
   GenerationLabel_1_result,
-} from "./TitleStyle";
-import mainButtonImage from "../mainImg/home_btn.png";
-import mainLogo from "../mainImg/mainlogo.png";
-import typeimg from "../mainImg/ggondae_ic.png";
-import sharebutton from "../mainImg/share_btn.png";
-import o_btn from "../mainImg/o_btn.png";
-import o_btn_remove from "../mainImg/o_btn_remove.png";
-import x_btn from "../mainImg/x_btn.png";
+} from "../TitleStyle";
+import mainButtonImage from "../../mainImg/home_btn.png";
+import mainLogo from "../../mainImg/mainlogo.png";
+import typeimg from "../../mainImg/ggondae_ic.png";
+import sharebutton from "../../mainImg/share_btn.png";
+import o_btn from "../../mainImg/o_btn.png";
+import o_btn_remove from "../../mainImg/o_btn_remove.png";
+import x_btn from "../../mainImg/x_btn.png";
 
 const Page1_result = () => {
   // 페이지 번호를 변수 로 설정
@@ -224,10 +224,6 @@ const Page1_result = () => {
           <NextButton_1>홈으로</NextButton_1>
         </ImageLink_1>
       </MainContainer_1>
-
-      <ImageLink to="/">
-        <SmallImage_0 src={mainButtonImage} alt="메인 화면으로 이동" />
-      </ImageLink>
     </Container>
   );
 };

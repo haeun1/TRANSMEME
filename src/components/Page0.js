@@ -31,6 +31,7 @@ import {
   DictContent_type_0,
   DictContent_word_0,
   Downarrow_0,
+  Downcontainer_0,
 } from "./TitleStyle";
 import mainLogo from "../mainImg/mainlogo.png";
 import mainButtonImage from "../mainImg/home_btn.png";
@@ -100,9 +101,14 @@ const Page0 = () => {
           </Box_0>
         </BoxContainer_0>
       </MainContent_0>
-      <Divider_0></Divider_0>
+
       <DictContainer_0>
         <DictContent_Main_0>
+          <Downcontainer_0>
+            <Downarrow_0 src={downarrowImage}></Downarrow_0>
+            <Downarrow_0 src={downarrowImage}></Downarrow_0>
+          </Downcontainer_0>
+
           <DictContent_MainWord_0>
             <DictContent_word_0>오나전</DictContent_word_0>
             <DictContent_type_0>(Z)</DictContent_type_0>
@@ -113,8 +119,7 @@ const Page0 = () => {
             다급하게 칠 때 쉽게 범하는 실수다.
           </DictContent_mean_0>
         </DictContent_Main_0>
-        <Downarrow_0 src={downarrowImage}></Downarrow_0>
-        <Downarrow_0 src={downarrowImage}></Downarrow_0>
+
         <DictContent_0>
           <DictContent_ex_0>
             예문<DictContent_sen_0>1. 와 저사람 오나전 쩐다.</DictContent_sen_0>
@@ -133,7 +138,7 @@ const Page0 = () => {
           </DictContent_ex_0>
         </DictContent_0>
       </DictContainer_0>
-      <ImageLink to="/">
+      <ImageLink to="/home">
         <SmallImage_0 src={mainButtonImage} alt="메인 화면으로 이동" />
       </ImageLink>
     </Container>

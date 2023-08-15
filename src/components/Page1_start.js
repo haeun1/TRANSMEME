@@ -42,7 +42,7 @@ const Page1_start = () => {
         </InputLabelContainer_1_start>
       </InputContainer_1_start>
 
-      <ImageLink to="/">
+      <ImageLink to="/home">
         <SmallImage_0 src={mainButtonImage} alt="메인 화면으로 이동" />
       </ImageLink>
       <StartLink_1 to="/page1">시작하기</StartLink_1>
