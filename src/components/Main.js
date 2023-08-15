@@ -17,7 +17,7 @@ const Main = () => {
       <Title_main>트랜스밈</Title_main>
       <Downarrow_main src={downarrowImage} />
       <Downarrow_main src={downarrowImage} />
-      <StartLink_main to="/">시작하기</StartLink_main>
+      <StartLink_main to="/home">시작하기</StartLink_main>
     </Container>
   );
 };

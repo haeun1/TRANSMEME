@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios"; // axios를 import
 import {
   Container,
   CenteredImage,
@@ -32,6 +33,7 @@ import {
   DictContent_type_0,
   DictContent_word_0,
   Downarrow_0,
+  Downcontainer_0,
 } from "./TitleStyle";
 import mainLogo from "../mainImg/mainlogo.png";
 import mainButtonImage from "../mainImg/home_btn.png";
@@ -42,23 +44,22 @@ const Page0 = () => {
   //ranking
   const [rankings, setRankings] = useState([]);
   const [currentRankingIndex, setCurrentRankingIndex] = useState(0);
-  const initialRankings = [
-    "Player 1",
-    "Player 2",
-    "Player 3",
-    "Player 4",
-    "Player 5",
-    "Player 6",
-    "Player 7",
-    "Player 8",
-    "Player 9",
-    "Player 10",
-  ];
+
   useEffect(() => {
-    setRankings(initialRankings);
+    // 서버에서 초기 랭킹 데이터를 받아와서 상태에 저장
+    axios
+      .get("http://52.79.219.32:8000/initial-rankings") // 서버의 API 주소에 맞게 변경
+      .then((response) => {
+        setRankings(response.data.initialRankings); // 받아온 데이터를 상태에 저장
+      })
+      .catch((error) => {
+        console.error("Error fetching initial rankings:", error);
+      });
+
+    // 랭킹 변경을 위한 인터벌 설정
     const interval = setInterval(() => {
       setCurrentRankingIndex((prevIndex) =>
-        prevIndex === initialRankings.length - 1 ? 0 : prevIndex + 1
+        prevIndex === rankings.length - 1 ? 0 : prevIndex + 1
       );
     }, 3000);
     return () => {
@@ -66,29 +67,40 @@ const Page0 = () => {
     };
   }, []);
 
-  const [translatedContent, setTranslatedContent] = useState("");
-  const [inputContent, setInputContent] = useState(""); // 사용자 입력 내용
+  const [inputContent, setInputContent] = useState(""); // 입력한 내용
+  const [translatedContent, setTranslatedContent] = useState(""); // 번역 결과
+  const [translatedValue, setTranslatedValue] = useState(null); // 번역 결과를 상태로 관
 
-  const handleTranslateClick = async () => {
-    // 서버로 데이터를 전송하고 결과를 받아오는 코드를 작성
-    try {
-      const response = await fetch("서버 API 주소", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+  // 번역 버튼 클릭 핸들러
+  const handleTranslateClick = () => {
+    // 입력한 내용과 API 주소를 이용하여 서버에 요청 보내기
+    axios
+      .get(
+        "http://52.79.219.32:8000/dictionary/apitest/?format=json ",
+        {
+          subject: inputContent,
         },
-        body: JSON.stringify({ content: inputContent }), // 사용자 입력 내용을 서버로 전송
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        // 서버로부터 받은 번역 결과 설정
+        const translated = response.data.words.find(
+          (words) => words.subject === inputContent
+        );
+        if (translated) {
+          setTranslatedContent(translated.standard);
+          setTranslatedValue(translated);
+        } else {
+          setTranslatedContent("해당 단어의 번역이 없습니다.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error during translation:", error);
       });
-
-      if (response.ok) {
-        const result = await response.json(); // 서버에서 받은 결과를 JSON으로 파싱
-        setTranslatedContent(result.translatedContent); // 서버에서 받은 번역된 내용을 상태에 저장
-      } else {
-        console.error("서버 응답 오류");
-      }
-    } catch (error) {
-      console.error("통신 오류:", error);
-    }
   };
 
   return (
@@ -117,8 +129,47 @@ const Page0 = () => {
           </Box_0>
         </BoxContainer_0>
       </MainContent_0>
+      {translatedValue !== null && (
+        <DictContainer_0>
+          <DictContent_Main_0>
+            <Downcontainer_0>
+              <Downarrow_0 src={downarrowImage}></Downarrow_0>
+              <Downarrow_0 src={downarrowImage}></Downarrow_0>
+            </Downcontainer_0>
 
-      <ImageLink to="/">
+            <DictContent_MainWord_0>
+              <DictContent_word_0>오나전</DictContent_word_0>
+              <DictContent_type_0>(Z)</DictContent_type_0>
+            </DictContent_MainWord_0>
+            <DictContent_mean_0>
+              ‘오나전’은 컴퓨터.휴대폰 자판을 두드리다 보면 누구나 쉽게 겪는
+              ‘완전’의 오타다. 휴대전화와 컴퓨터 자판으로 ‘완전’이라는 글자를
+              다급하게 칠 때 쉽게 범하는 실수다.
+            </DictContent_mean_0>
+          </DictContent_Main_0>
+
+          <DictContent_0>
+            <DictContent_ex_0>
+              예문
+              <DictContent_sen_0>1. 와 저사람 오나전 쩐다.</DictContent_sen_0>
+              <DictContent_sen_0>2. 와 저사람 오나전 쩐다.</DictContent_sen_0>
+            </DictContent_ex_0>
+            <DictContent_ex_0>
+              다른세대 유사단어
+              <DictContent_Word_0>
+                <DictContent_word_0>캡</DictContent_word_0>
+                <DictContent_type_0>(Z)</DictContent_type_0>
+              </DictContent_Word_0>
+              <DictContent_Word_0>
+                <DictContent_word_0>대박</DictContent_word_0>
+                <DictContent_type_0>(M)</DictContent_type_0>
+              </DictContent_Word_0>
+            </DictContent_ex_0>
+          </DictContent_0>
+        </DictContainer_0>
+      )}
+
+      <ImageLink to="/home">
         <SmallImage_0 src={mainButtonImage} alt="메인 화면으로 이동" />
       </ImageLink>
     </Container>

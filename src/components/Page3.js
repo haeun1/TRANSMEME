@@ -5,15 +5,16 @@ import { Link } from 'react-router-dom';
 import { Container, CenteredImage, Title,SmallImage_0,ImageLink,Divider_0,Group15,Image5,GenerationSelection
 ,Group40,Line,Label,Wrapper,Rectangle19,Character,TextLabel,NWrapper,Rectangle20,NCharacter,NTextLabel,DCharacter,DTextLabel
 ,DWrapper,Rectangle21,LWrapper,LCharacter,LTextLabel,Rectangle22} from "./TitleStyle";
+
 import mainLogo from "../mainImg/mainlogo.png";
 import mainButtonImage from "../mainImg/home_btn.png";
 
 const Page3 = () => {
   const pageNumber = 3; // 페이지 번호를 변수로 설정
-  const [showGroup40, setShowGroup40] = useState(false);  // state 추가
+  const [showGroup40, setShowGroup40] = useState(false); // state 추가
 
   const handleGroupClick = () => {
-    setShowGroup40(!showGroup40);  // showGroup40 토글
+    setShowGroup40(!showGroup40); // showGroup40 토글
   };
 
   const [data, setData] = useState({
@@ -47,14 +48,15 @@ const Page3 = () => {
     <Container>
       <CenteredImage src={mainLogo} />
       <Title>도감</Title>
-     
-        <Group15 onClick={handleGroupClick}>
+
+      <Group15 onClick={handleGroupClick}>
         <Image5 />
         <GenerationSelection>세대 선택</GenerationSelection>
-        </Group15>
-     
+      </Group15>
+
       <Divider_0></Divider_0>
       <Group40 style={{ display: showGroup40 ? "block" : "none" }}>
+
       <Line topPosition="301px" />
       <Line topPosition="344px" />
       <Line topPosition="389px" />
@@ -116,7 +118,7 @@ const Page3 = () => {
       <ImageLink to="/">
         <SmallImage_0 src={mainButtonImage} alt="메인 화면으로 이동" />
       </ImageLink>
-      </Container>
+    </Container>
   );
 };
 
