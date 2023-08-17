@@ -1262,6 +1262,58 @@ export const LTextLabel = styled.div`
   color: #000000;
 `;
 
+
+// M Wrapper
+export const MWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 286px;
+  left: 45px;
+  top: 75px;
+`;
+
+export const MRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 403px;
+  top: 1005px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// ㅁ
+export const MCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 461px;
+  top: 1018px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+// 가즈아 - Since this component is repeated multiple times, we'll use props to adjust positions
+export const MTextLabel = styled.div`
+  position: absolute;
+  width: 80px;
+  height: 27px;
+  left: ${(props) => props.left || "392px"};
+  top: ${(props) => props.top};
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  color: #000000;
+`;
+
+
 //Page3_word.js
 
 // 단어해석 Wrapper
