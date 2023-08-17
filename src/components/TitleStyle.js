@@ -308,22 +308,22 @@ export const InputLabelContainer_1_start = styled.div`
 `;
 
 export const InputLabel_1_start = styled.label`
-  font-size: 25px;
+  font-size: 35px;
   margin-bottom: 8px;
   font-family: "main_f", sans-serif;
-  font-weight: 200;
+  font-weight: 600;
   ${fontFace};
 `;
 
 export const InputField_1_start = styled.input`
-  width: 200px;
-  height: 50px;
+  width: 400px;
+  height: 80px;
   margin-top: 10px;
   padding: 5px;
   text-align: center;
   border: none;
   background-color: #afe6fa;
-  font-size: 20px;
+  font-size: 40px;
   border-radius: 10px;
   font-family: "main_f", sans-serif;
   font-weight: 200;
@@ -331,7 +331,8 @@ export const InputField_1_start = styled.input`
 `;
 
 export const StartLink_1 = styled(NavLink)`
-  margin-top: 60px;
+  position: absolute;
+  margin-top: 660px;
   text-decoration: none; /* 밑줄 없애기 */
   color: black;
   font-size: 40px;
@@ -800,6 +801,41 @@ export const NumberSpan_1_result = styled.span`
   font-family: "main_f", sans-serif;
   font-weight: 700;
   ${fontFace};
+`;
+
+export const Error_message_name = styled.div`
+  position: absolute;
+  width: 225px;
+  height: 20px;
+  right: 161px;
+  font-size: 20px;
+  color: red;
+  border-bottom: 2px solid red;
+  font-family: "main_f", sans-serif;
+  font-weight: 300;
+  ${fontFace};
+`;
+export const Error_message_age = styled.div`
+  position: absolute;
+  left: 161px;
+  width: 225px;
+  height: 20px;
+  font-size: 20px;
+  border-bottom: 2px solid red;
+  color: red;
+  font-family: "main_f", sans-serif;
+  font-weight: 300;
+  ${fontFace};
+`;
+
+export const Error_message_space = styled.div`
+  width: 320px; /* 원하는 공백 크기 */
+`;
+
+export const Error_message_container = styled.div`
+  display: flex;
+  margin-top: 10px;
+  position: relative;
 `;
 
 // Page2
