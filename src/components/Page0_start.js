@@ -1,3 +1,4 @@
+//Page0.js
 import React, { useState, useEffect } from "react";
 import axios from "axios"; // axios를 import
 import {
@@ -41,35 +42,6 @@ import translateButtonImage from "../mainImg/translate_btn.png";
 import downarrowImage from "../mainImg/downarrow.png";
 const Page0 = () => {
   const pageNumber = 0;
-  // //ranking
-  const [rankings, setRankings] = useState([]);
-  const [currentRankingIndex, setCurrentRankingIndex] = useState(0);
-  useEffect(() => {
-    // 서버에서 초기 랭킹 데이터를 받아와서 상태에 저장
-    axios
-      .get("http://52.79.219.32:8000/transmeme/apitest/")
-      .then((response) => {
-        const rankingSubjects = response.data.count.map((word) => word.subject);
-        setRankings(rankingSubjects);
-      })
-      .catch((error) => {
-        console.error("Error fetching initial rankings:", error);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (rankings.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentRankingIndex((prevIndex) =>
-          prevIndex === rankings.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 3000); // 3초마다 순위 변경 (원하는 시간으로 조정)
-
-      return () => {
-        clearInterval(interval);
-      };
-    }
-  }, [rankings]);
 
   const [inputContent, setInputContent] = useState(""); // 입력한 내용
   const [translatedContent, setTranslatedContent] = useState(""); // 번역 결과
@@ -77,6 +49,7 @@ const Page0 = () => {
   const [translatedContent_mean, setTranslatedContent_mean] = useState(""); // 번역 결과
   const [translatedContent_sen, setTranslatedContent_sen] = useState(""); // 번역 결과
   const [translatedContent_syn, setTranslatedContent_syn] = useState(""); // 번역 결과
+  const [translatedContent_input, setTranslatedContent_input] = useState(""); // 번역 결과
   const [translatedValue, setTranslatedValue] = useState(null); // 번역 결과를 상태로 관
 
   const handleTranslateClick = () => {
@@ -102,6 +75,7 @@ const Page0 = () => {
           setTranslatedContent_mean(response.data.word.meaning);
           setTranslatedContent_sen(response.data.ex.example);
           setTranslatedContent_syn(response.data.syno.synonym);
+          setTranslatedContent_input(response.data.wordinput);
           setTranslatedValue(translated);
         } else {
           setTranslatedContent("해당 단어의 번역이 없습니다.");
@@ -112,22 +86,41 @@ const Page0 = () => {
       });
   };
 
+  // //ranking
+  const [rankings, setRankings] = useState([]);
+  const [currentRankingIndex, setCurrentRankingIndex] = useState(0);
+  useEffect(() => {
+    // 서버에서 초기 랭킹 데이터를 받아와서 상태에 저장
+    axios
+      .post("http://52.79.219.32:8000/transmeme/apitest/")
+      .then((response) => {
+        const rankingSubjects = response.data.count.map((word) => word.subject);
+        setRankings(rankingSubjects);
+      })
+      .catch((error) => {
+        console.error("Error fetching initial rankings:", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (translatedValue !== null) {
+      const interval = setInterval(() => {
+        setCurrentRankingIndex((prevIndex) =>
+          prevIndex === rankings.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000); // 3초마다 순위 변경
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [translatedValue, rankings]);
+
   return (
     <Container>
       <MainContent_0>
         <CenteredImage src={mainLogo} />
         <Title>트랜스밈</Title>
-        {/* {translatedValue !== null && (
-          <RankingContainer_0>
-            <Verticalbar_0 />
-            <RankingContent_0>많이 찾는 번역</RankingContent_0>
-            <Ranking_0>
-              {`${currentRankingIndex + 1}위: ${
-                rankings && rankings[currentRankingIndex]
-              }`}
-            </Ranking_0>
-          </RankingContainer_0>
-        )} */}{" "}
         {translatedValue !== null && (
           <RankingContainer_0>
             <Verticalbar_0 />
@@ -167,7 +160,7 @@ const Page0 = () => {
             </Downcontainer_0>
 
             <DictContent_MainWord_0>
-              <DictContent_word_0>{inputContent}</DictContent_word_0>
+              <DictContent_word_0>{translatedContent_input}</DictContent_word_0>
               <DictContent_type_0>{translatedContent_type}</DictContent_type_0>
             </DictContent_MainWord_0>
             <DictContent_mean_0>{translatedContent_mean}</DictContent_mean_0>
@@ -177,17 +170,17 @@ const Page0 = () => {
             <DictContent_ex_0>
               예문
               <DictContent_sen_0>{translatedContent_sen}</DictContent_sen_0>
-              <DictContent_sen_0>{translatedContent_sen}</DictContent_sen_0>
+              {/* <DictContent_sen_0>{translatedContent_sen}</DictContent_sen_0> */}
             </DictContent_ex_0>
             <DictContent_ex_0>
               다른세대 유사단어
               <DictContent_Word_0>
                 <DictContent_word_0>{translatedContent_syn}</DictContent_word_0>
-                <DictContent_type_0>(Z)</DictContent_type_0>
+                <DictContent_type_0></DictContent_type_0>
               </DictContent_Word_0>
               <DictContent_Word_0>
-                <DictContent_word_0>{translatedContent_syn}</DictContent_word_0>
-                <DictContent_type_0>(M)</DictContent_type_0>
+                {/* <DictContent_word_0>{translatedContent_syn}</DictContent_word_0>
+                <DictContent_type_0>(M)</DictContent_type_0> */}
               </DictContent_Word_0>
             </DictContent_ex_0>
           </DictContent_0>
