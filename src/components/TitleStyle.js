@@ -107,7 +107,8 @@ export const DictContent_MainWord_0 = styled.div`
 `;
 
 export const DictContent_word_0 = styled.div`
-  font-size: 30px;
+  font-size: 22px;
+  margin-top: 15px;
   margin-right: 10px;
   color: black;
 `;
@@ -115,7 +116,7 @@ export const DictContent_word_0 = styled.div`
 export const DictContent_type_0 = styled.div`
   color: #dbdbdb;
   font-weight: 900;
-  font-size: 25px;
+  font-size: 22px;
 `;
 
 export const DictContent_mean_0 = styled.div`
@@ -138,14 +139,14 @@ export const DictContent_ex_0 = styled.div`
 
 export const DictContent_sen_0 = styled.div`
   font-size: 22px;
-  margin-top: 20px;
+  margin-top: 25px;
   color: black;
   display: flex;
   align-items: center;
 `;
 
 export const DictContent_Word_0 = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
 `;
@@ -435,7 +436,7 @@ export const DisagreeContent_1 = styled.div`
 
 export const NextButton_1 = styled.button`
   background-color: #87daf8;
-  margin-top: 50px;
+  margin-top: 2000px;
   border: none;
   width: 240px;
   height: 60px;
@@ -482,21 +483,25 @@ export const MainContainer_1 = styled.div`
   font-size: 23px;
 `;
 export const FeatureContainer_1 = styled.div`
+  height: 400px;
+  width: 1000px;
   border-radius: 20px;
   background-color: #87daf8;
 `;
 export const Feature_1 = styled.div`
   padding: 50px;
   color: white;
-  font-size: 35px;
+  font-size: 50px;
   font-weight: 900;
 `;
 export const FeatureContent_1 = styled.div`
   display: flex;
   padding: 50px;
+  font-size: 30px;
+  font-weight: 300;
   width: 90%;
   margin-top: -60px;
-  justify-content: center; /* 가운데 정렬 설정 */
+  justify-content: ; /* 가운데 정렬 설정 */
 `;
 
 export const CommentContainer_1 = styled.div`
@@ -690,7 +695,7 @@ export const NameLabel_1_result = styled.div`
 
 export const Background1_1_result = styled.div`
   width: 100%;
-  height: 500px;
+  height: 1500px;
   left: 0;
   top: 0;
   position: absolute;
