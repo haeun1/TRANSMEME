@@ -58,6 +58,7 @@ const Page1 = () => {
         // 서버 응답 처리 로직 추가
         setProblemNumber(receivedProblemNumber);
         setUserGeneration(receivedUserGeneration);
+        localStorage.setItem("generation", userGeneration);
         // Clear the selected value
         // Enable the "Next" button
 
