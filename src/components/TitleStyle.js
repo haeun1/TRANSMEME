@@ -436,7 +436,7 @@ export const DisagreeContent_1 = styled.div`
 
 export const NextButton_1 = styled.button`
   background-color: #87daf8;
-  margin-top: 2000px;
+  margin-top: 1000px;
   border: none;
   width: 240px;
   height: 60px;
@@ -460,6 +460,8 @@ export const Type_1_result = styled.div`
 `;
 export const TypeImage_1_result = styled.img`
   color: #87daf8;
+  height: 300px;
+  width: 300px;
   margin-top: 80px;
 `;
 
@@ -487,17 +489,18 @@ export const FeatureContainer_1 = styled.div`
   width: 1000px;
   border-radius: 20px;
   background-color: #87daf8;
+  margin-bottom: 100px;
 `;
 export const Feature_1 = styled.div`
   padding: 50px;
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 900;
 `;
 export const FeatureContent_1 = styled.div`
   display: flex;
   padding: 50px;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 300;
   width: 90%;
   margin-top: -60px;
@@ -695,18 +698,18 @@ export const NameLabel_1_result = styled.div`
 
 export const Background1_1_result = styled.div`
   width: 100%;
-  height: 1500px;
+  height: 1400px;
   left: 0;
   top: 0;
   position: absolute;
   background: #87daf8;
-  border-radius: 15px;
+  border-radius: 20px;
   border: 0.5px #ababab solid;
 `;
 
 export const StatisticContainer_1_result = styled.div`
   width: 100%;
-  height: 500px;
+  height: 1500px;
   position: relative;
 `;
 export const StatisticTitle_1_result = styled.div`

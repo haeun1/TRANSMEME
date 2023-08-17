@@ -60,11 +60,12 @@ import {
 } from "../TitleStyle";
 import mainButtonImage from "../../mainImg/home_btn.png";
 import mainLogo from "../../mainImg/mainlogo.png";
-import typeimg from "../../mainImg/ggondae_ic.png";
 import sharebutton from "../../mainImg/share_btn.png";
 import o_btn from "../../mainImg/o_btn.png";
 import o_btn_remove from "../../mainImg/o_btn_remove.png";
 import x_btn from "../../mainImg/x_btn.png";
+import ggondae from "../../mainImg/ggondae_ic.png";
+import kingman from "../../mainImg/kingman_ic.png";
 
 const Page1_result = () => {
   const [grade, setGrade] = useState(null);
@@ -73,32 +74,7 @@ const Page1_result = () => {
   const [fThree, setFThree] = useState(null);
   const location = useLocation();
   const resultData = location.state;
-  // useEffect(() => {
-  //   axios
-  //     .post("http://52.79.219.32:8000/oldmantest/test", {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //     .then((response) => {
-  //       const receivedGrade = response.data.grade.grade;
-  //       const receivedFOne = response.data.grade.Fone;
-  //       const receivedFTwo = response.data.grade.Ftwo;
-  //       const receivedFThree = response.data.grade.Fthird;
-  //       setGrade(receivedGrade);
-  //       setFOne(receivedFOne);
-  //       setFTwo(receivedFTwo);
-  //       setFThree(receivedFThree);
-  //       console.log("Grade:", grade);
-  //       console.log("FOne:", fOne);
-  //       console.log("FTwo:", fTwo);
-  //       console.log("FThree:", fThree);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error sending data to server:", error);
-  //       // Handle error
-  //     });
-  // }, []);
+  const [questionInfos, setQuestionInfos] = useState([]);
 
   useEffect(() => {
     if (resultData) {
@@ -121,6 +97,20 @@ const Page1_result = () => {
           console.log("FOne:", receivedFOne);
           console.log("FTwo:", receivedFTwo);
           console.log("FThree:", receivedFThree);
+
+          const questionList = response.data.QuestionList;
+          console.log("Statistic:", questionList);
+          setQuestionInfos(
+            questionList.map((info) => ({
+              id: info.question_info.id,
+              Plgx: info.question_info.Plgx,
+              Plgm: info.question_info.Plgm,
+              Plgz: info.question_info.Plgz,
+              Prgx: info.question_info.Prgx,
+              Prgm: info.question_info.Prgm,
+              Prgz: info.question_info.Prgz,
+            }))
+          );
         })
         .catch((error) => {
           console.error("Error sending data to server:", error);
@@ -128,6 +118,15 @@ const Page1_result = () => {
         });
     }
   }, [resultData]);
+
+  let typeImageSrc = ""; // 이미지 경로를 담을 변수 초기화
+  if (grade === "요즘꼰대") {
+    typeImageSrc = ggondae; // 옛날꼰대면 이미지 경로
+  } else if (grade === "뼛속MZ") {
+    typeImageSrc = kingman; // 다른 경우 이미지 경로
+  } else {
+    typeImageSrc = kingman;
+  }
 
   // 페이지 번호를 변수 로 설정
   return (
@@ -137,7 +136,7 @@ const Page1_result = () => {
         <Typecontent_1_result>
           당신은&nbsp;<Type_1_result>"{grade}"</Type_1_result>&nbsp;입니다.
         </Typecontent_1_result>
-        <TypeImage_1_result src={typeimg}></TypeImage_1_result>
+        <TypeImage_1_result src={typeImageSrc}></TypeImage_1_result>
         <ShareButton_1_result src={sharebutton}></ShareButton_1_result>
       </Container_1>
       <MainContainer_1>
@@ -152,13 +151,13 @@ const Page1_result = () => {
             <br />
           </FeatureContent_1>
         </FeatureContainer_1>
-        <CommentContainer_1>
+        {/* <CommentContainer_1>
           <CommentBox_1>
             <CommentTitle_1>Comment</CommentTitle_1>
             <Verticalbar_1></Verticalbar_1>
           </CommentBox_1>
-        </CommentContainer_1>
-        <Container_1_result>
+        </CommentContainer_1> */}
+        {/* <Container_1_result>
           <WhiteBox_1_result />
           <Title_1_result>실시간 COMMENT</Title_1_result>
           <Background_1_result />
@@ -169,88 +168,184 @@ const Page1_result = () => {
           <TimeLabel_1_result>14:32</TimeLabel_1_result>
           <CommentBubble_1_result>나 요즘 꼰대 나옴 ㅋ</CommentBubble_1_result>
           <NameLabel_1_result>홍설(M)</NameLabel_1_result>
-          {/* 나머지 컴포넌트도 동일한 방식으로 작성 */}
-        </Container_1_result>
+        </Container_1_result> */}
+
         <StatisticContainer1_1_result>
           <Background1_1_result />
           <StatisticTitle_1_result>통계</StatisticTitle_1_result>
           <Line_1_result></Line_1_result>
+          {questionInfos.map((info) => (
+            <div key={info.id}>
+              <ColoredCircleBackground_1_result
+                left={info.id % 2 !== 0 ? 280 : 690}
+                top={120 + 250 * Math.floor((info.id - 1) / 2)}
+                src={o_btn_remove}
+              />
+              <ColoredCircleForeground_1_result
+                left={info.id % 2 !== 0 ? 410 : 820}
+                top={120 + 250 * Math.floor((info.id - 1) / 2)}
+                src={x_btn}
+              />
+              <GenerationLabel_1_result
+                left={info.id % 2 !== 0 ? 150 : 560}
+                top={190 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                X세대
+              </GenerationLabel_1_result>
+              <GenerationLabel_1_result
+                left={info.id % 2 !== 0 ? 150 : 560}
+                top={230 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                M세대
+              </GenerationLabel_1_result>
+              <GenerationLabel_1_result
+                left={info.id % 2 !== 0 ? 150 : 560}
+                top={270 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                Z세대
+              </GenerationLabel_1_result>
+              <PercentageLabel_1_result
+                left={info.id % 2 !== 0 ? 280 : 690}
+                top={190 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                {info.Plgx}%
+              </PercentageLabel_1_result>
+              <PercentageLabel_1_result
+                left={info.id % 2 !== 0 ? 280 : 690}
+                top={230 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                {info.Plgm}%
+              </PercentageLabel_1_result>
+              <PercentageLabel_1_result
+                left={info.id % 2 !== 0 ? 280 : 690}
+                top={270 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                {info.Plgz}%
+              </PercentageLabel_1_result>
+              <PercentageLabel_1_result
+                left={info.id % 2 !== 0 ? 410 : 820}
+                top={190 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                {info.Prgx}%
+              </PercentageLabel_1_result>
+              <PercentageLabel_1_result
+                left={info.id % 2 !== 0 ? 410 : 820}
+                top={230 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                {info.Prgm}%
+              </PercentageLabel_1_result>
+              <PercentageLabel_1_result
+                left={info.id % 2 !== 0 ? 410 : 820}
+                top={270 + 250 * Math.floor((info.id - 1) / 2)}
+              >
+                {info.Prgz}%
+              </PercentageLabel_1_result>
+              <NumberSpan_1_result
+                left={info.id % 2 !== 0 ? 160 : 560}
+                top={120 + 250 * Math.floor((info.id - 1) / 2)}
+                color="black"
+              >
+                0<ColorTitle_1>{info.id}</ColorTitle_1>
+              </NumberSpan_1_result>
+            </div>
+          ))}
 
-          <ColoredCircleBackground_1_result
-            left={300}
-            top={120}
-            src={o_btn_remove}
-          />
-          <ColoredCircleForeground_1_result left={430} top={120} src={x_btn} />
+          {/* 
+          {questionInfos
+            .filter((info) => info.id === 1) // id가 1인 데이터만 필터링
+            .map((info) => (
+              <div key={info.id}>
+                <ColoredCircleBackground_1_result
+                  left={300}
+                  top={120}
+                  src={o_btn_remove}
+                />
+                <ColoredCircleForeground_1_result
+                  left={430}
+                  top={120}
+                  src={x_btn}
+                />
 
-          <GenerationLabel_1_result left={170} top={190}>
-            X세대
-          </GenerationLabel_1_result>
-          <GenerationLabel_1_result left={170} top={230}>
-            M세대
-          </GenerationLabel_1_result>
-          <GenerationLabel_1_result left={170} top={270}>
-            Z세대
-          </GenerationLabel_1_result>
-          <PercentageLabel_1_result left={300} top={190}>
-            68%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={300} top={230}>
-            50%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={300} top={270}>
-            32%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={430} top={190}>
-            32%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={430} top={230}>
-            50%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={430} top={270}>
-            68%
-          </PercentageLabel_1_result>
-          <NumberSpan_1_result left={180} top={120} color="black">
-            0<ColorTitle_1>1</ColorTitle_1>
-          </NumberSpan_1_result>
+                <GenerationLabel_1_result left={170} top={190}>
+                  X세대
+                </GenerationLabel_1_result>
+                <GenerationLabel_1_result left={170} top={230}>
+                  M세대
+                </GenerationLabel_1_result>
+                <GenerationLabel_1_result left={170} top={270}>
+                  Z세대
+                </GenerationLabel_1_result>
+                <PercentageLabel_1_result left={300} top={190}>
+                  {info.Plgx}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={300} top={230}>
+                  {info.Plgm}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={300} top={270}>
+                  {info.Plgz}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={430} top={190}>
+                  {info.Prgx}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={430} top={230}>
+                  {info.Prgm}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={430} top={270}>
+                  {info.Prgz}%
+                </PercentageLabel_1_result>
+                <NumberSpan_1_result left={180} top={120} color="black">
+                  0<ColorTitle_1>{info.id}</ColorTitle_1>
+                </NumberSpan_1_result>
+              </div>
+            ))}
 
-          <ColoredCircleBackground_1_result
-            left={710}
-            top={120}
-            src={o_btn_remove}
-          />
-          <ColoredCircleForeground_1_result left={840} top={120} src={x_btn} />
+          {questionInfos
+            .filter((info) => info.id === 2) // id가 2인 데이터만 필터링
+            .map((info) => (
+              <div key={info.id}>
+                <ColoredCircleBackground_1_result
+                  left={710}
+                  top={120}
+                  src={o_btn_remove}
+                />
+                <ColoredCircleForeground_1_result
+                  left={840}
+                  top={120}
+                  src={x_btn}
+                />
 
-          <GenerationLabel_1_result left={580} top={190}>
-            X세대
-          </GenerationLabel_1_result>
-          <GenerationLabel_1_result left={580} top={230}>
-            M세대
-          </GenerationLabel_1_result>
-          <GenerationLabel_1_result left={580} top={270}>
-            Z세대
-          </GenerationLabel_1_result>
-          <PercentageLabel_1_result left={710} top={190}>
-            68%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={710} top={230}>
-            50%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={710} top={270}>
-            32%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={840} top={190}>
-            32%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={840} top={230}>
-            50%
-          </PercentageLabel_1_result>
-          <PercentageLabel_1_result left={840} top={270}>
-            68%
-          </PercentageLabel_1_result>
-          <NumberSpan_1_result left={580} top={120} color="black">
-            0<ColorTitle_1>2</ColorTitle_1>
-          </NumberSpan_1_result>
+                <GenerationLabel_1_result left={580} top={190}>
+                  X세대
+                </GenerationLabel_1_result>
+                <GenerationLabel_1_result left={580} top={230}>
+                  M세대
+                </GenerationLabel_1_result>
+                <GenerationLabel_1_result left={580} top={270}>
+                  Z세대
+                </GenerationLabel_1_result>
+                <PercentageLabel_1_result left={710} top={190}>
+                  {info.Plgx}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={710} top={230}>
+                  {info.Plgm}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={710} top={270}>
+                  {info.Plgz}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={840} top={190}>
+                  {info.Prgx}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={840} top={230}>
+                  {info.Prgm}%
+                </PercentageLabel_1_result>
+                <PercentageLabel_1_result left={840} top={270}>
+                  {info.Prgz}%
+                </PercentageLabel_1_result>
+                <NumberSpan_1_result left={580} top={120} color="black">
+                  0<ColorTitle_1>{info.id}</ColorTitle_1>
+                </NumberSpan_1_result>
+              </div>
+            ))} */}
         </StatisticContainer1_1_result>
 
         <ImageLink_1 to="/">
