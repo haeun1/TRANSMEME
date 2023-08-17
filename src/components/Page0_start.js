@@ -170,17 +170,17 @@ const Page0 = () => {
             <DictContent_ex_0>
               예문
               <DictContent_sen_0>{translatedContent_sen}</DictContent_sen_0>
-              <DictContent_sen_0>{translatedContent_sen}</DictContent_sen_0>
+              {/* <DictContent_sen_0>{translatedContent_sen}</DictContent_sen_0> */}
             </DictContent_ex_0>
             <DictContent_ex_0>
               다른세대 유사단어
               <DictContent_Word_0>
                 <DictContent_word_0>{translatedContent_syn}</DictContent_word_0>
-                <DictContent_type_0>(Z)</DictContent_type_0>
+                <DictContent_type_0></DictContent_type_0>
               </DictContent_Word_0>
               <DictContent_Word_0>
-                <DictContent_word_0>{translatedContent_syn}</DictContent_word_0>
-                <DictContent_type_0>(M)</DictContent_type_0>
+                {/* <DictContent_word_0>{translatedContent_syn}</DictContent_word_0>
+                <DictContent_type_0>(M)</DictContent_type_0> */}
               </DictContent_Word_0>
             </DictContent_ex_0>
           </DictContent_0>
