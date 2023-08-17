@@ -1,6 +1,7 @@
 // Page1.js
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 import {
   fontFace,
   Container,
@@ -66,6 +67,30 @@ import o_btn_remove from "../../mainImg/o_btn_remove.png";
 import x_btn from "../../mainImg/x_btn.png";
 
 const Page1_result = () => {
+  useEffect(() => {
+    axios
+      .get("http://52.79.219.32:8000/oldmantest/test", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        const grade = response.data.grade.grade;
+        const fOne = response.data.grade.Fone;
+        const fTwo = response.data.grade.Ftwo;
+        const fThree = response.data.grade.Fthird;
+
+        console.log("Grade:", grade);
+        console.log("FOne:", fOne);
+        console.log("FTwo:", fTwo);
+        console.log("FThree:", fThree);
+      })
+      .catch((error) => {
+        console.error("Error sending data to server:", error);
+        // Handle error
+      });
+  }, []);
+
   // 페이지 번호를 변수 로 설정
   return (
     <Container>
