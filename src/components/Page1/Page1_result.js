@@ -134,6 +134,7 @@ const Page1_result = () => {
           },
         })
         .then((response) => {
+
           const receivedGrade = response.data.grade.grade;
           const receivedFOne = response.data.grade.Fone;
           const receivedFTwo = response.data.grade.Ftwo;
@@ -171,6 +172,7 @@ const Page1_result = () => {
               date: cinfo.date,
             }))
           );
+
         })
         .catch((error) => {
           console.error("Error sending data to server:", error);
