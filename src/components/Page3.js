@@ -98,7 +98,16 @@ const Page3 = () => {
   let nfilteredWords = [];
   let nsubjectsAndIds = [];
   if (data) {
-    nfilteredWords = data.words.filter(word => word.initial_sound === "ᄂ");
+
+    if(generation === "") {
+      nfilteredWords = data.words;
+     
+    }
+    else {
+      nfilteredWords = data.words.filter(word=>word.generation === generation);
+    }
+
+    nfilteredWords = nfilteredWords.filter(word => word.initial_sound === "ᄂ");
     nsubjectsAndIds = nfilteredWords.map(word => ({
       id: word.id,
       subject: word.subject
@@ -112,7 +121,7 @@ const Page3 = () => {
           const top = ntops[index];
           const left = nlefts[index];
           return (
-            <Link key={item.id} to={`../page3_word/`}>
+            <Link key={item.id} to={`../page3_word/${item.id}`}>
               <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
             </Link>
           );
@@ -124,7 +133,13 @@ const Page3 = () => {
   let dfilteredWords = [];
   let dsubjectsAndIds = [];
 if (data) {
-  dfilteredWords = data.words.filter(word => word.initial_sound === "ᄃ");
+  if(generation === "") {
+    dfilteredWords = data.words;
+  }
+  else {
+    dfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  dfilteredWords = dfilteredWords.filter(word => word.initial_sound === "ᄃ");
   dsubjectsAndIds = dfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -138,7 +153,7 @@ function DMyComponent({ dtops, dlefts }) {
         const top = dtops[index];
         const left = dlefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -150,7 +165,13 @@ function DMyComponent({ dtops, dlefts }) {
 let lfilteredWords = [];
 let lsubjectsAndIds = [];
 if (data) {
-  lfilteredWords = data.words.filter(word => word.initial_sound === "ᄅ");
+  if(generation === "") {
+    lfilteredWords = data.words;
+  }
+  else {
+    lfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  lfilteredWords = lfilteredWords.filter(word => word.initial_sound === "ᄅ");
   lsubjectsAndIds = lfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -164,7 +185,7 @@ function LMyComponent({ ltops, llefts }) {
         const top = ltops[index];
         const left = llefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -176,7 +197,13 @@ function LMyComponent({ ltops, llefts }) {
 let mfilteredWords = [];
 let msubjectsAndIds = [];
 if (data) {
-  mfilteredWords = data.words.filter(word => word.initial_sound === "ᄆ");
+  if(generation === "") {
+    mfilteredWords = data.words;
+  }
+  else {
+    mfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  mfilteredWords = mfilteredWords.filter(word => word.initial_sound === "ᄆ");
   msubjectsAndIds = mfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -190,7 +217,7 @@ function MMyComponent({ mtops, mlefts }) {
         const top = mtops[index];
         const left = mlefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -203,7 +230,13 @@ function MMyComponent({ mtops, mlefts }) {
 let bfilteredWords = [];
 let bsubjectsAndIds = [];
 if (data) {
-  bfilteredWords = data.words.filter(word => word.initial_sound === "ᄇ" || word.initial_sount ==="ᄈ");
+  if(generation === "") {
+    bfilteredWords = data.words;
+  }
+  else {
+    bfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  bfilteredWords = bfilteredWords.filter(word => word.initial_sound === "ᄇ" || word.initial_sount ==="ᄈ");
   bsubjectsAndIds = bfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -217,7 +250,7 @@ function BMyComponent({ btops, blefts }) {
         const top = btops[index];
         const left = blefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -229,7 +262,13 @@ function BMyComponent({ btops, blefts }) {
 let sfilteredWords = [];
 let ssubjectsAndIds = [];
 if (data) {
-  sfilteredWords = data.words.filter(word => word.initial_sound === "ᄉ");
+  if(generation === "") {
+    sfilteredWords = data.words;
+  }
+  else {
+    sfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  sfilteredWords = sfilteredWords.filter(word => word.initial_sound === "ᄉ");
   ssubjectsAndIds = sfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -243,7 +282,7 @@ function SMyComponent({ stops, slefts }) {
         const top = stops[index];
         const left = slefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -255,7 +294,13 @@ function SMyComponent({ stops, slefts }) {
 let ifilteredWords = [];
 let isubjectsAndIds = [];
 if (data) {
-  ifilteredWords = data.words.filter(word => word.initial_sound === "ᄋ");
+  if(generation === "") {
+    ifilteredWords = data.words;
+  }
+  else {
+    ifilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  ifilteredWords = ifilteredWords.filter(word => word.initial_sound === "ᄋ");
   isubjectsAndIds = ifilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -269,7 +314,7 @@ function IMyComponent({ itops, ilefts }) {
         const top = itops[index];
         const left = ilefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -282,7 +327,13 @@ function IMyComponent({ itops, ilefts }) {
 let jfilteredWords = [];
 let jsubjectsAndIds = [];
 if (data) {
-  jfilteredWords = data.words.filter(word => word.initial_sound === "ᄌ" || word.initial_sound === "ᄍ");
+  if(generation === "") {
+    jfilteredWords = data.words;
+  }
+  else {
+    jfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  jfilteredWords = jfilteredWords.filter(word => word.initial_sound === "ᄌ" || word.initial_sound === "ᄍ");
   jsubjectsAndIds = jfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -296,7 +347,7 @@ function JMyComponent({ jtops, jlefts }) {
         const top = jtops[index];
         const left = jlefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -309,7 +360,13 @@ function JMyComponent({ jtops, jlefts }) {
 let cfilteredWords = [];
 let csubjectsAndIds = [];
 if (data) {
-  cfilteredWords = data.words.filter(word => word.initial_sound === "ᄎ");
+  if(generation === "") {
+    cfilteredWords = data.words;
+  }
+  else {
+    cfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  cfilteredWords = cfilteredWords.filter(word => word.initial_sound === "ᄎ");
   csubjectsAndIds = cfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -323,7 +380,7 @@ function CMyComponent({ ctops, clefts }) {
         const top = ctops[index];
         const left = clefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -335,7 +392,13 @@ function CMyComponent({ ctops, clefts }) {
 let kfilteredWords = [];
 let ksubjectsAndIds = [];
 if (data) {
-  kfilteredWords = data.words.filter(word => word.initial_sound === "ᄏ");
+  if(generation === "") {
+    kfilteredWords = data.words;
+  }
+  else {
+    kfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  kfilteredWords = kfilteredWords.filter(word => word.initial_sound === "ᄏ");
   ksubjectsAndIds = kfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -349,7 +412,7 @@ function KMyComponent({ ktops, klefts }) {
         const top = ktops[index];
         const left = klefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -361,7 +424,13 @@ function KMyComponent({ ktops, klefts }) {
 let tfilteredWords = [];
 let tsubjectsAndIds = [];
 if (data) {
-  tfilteredWords = data.words.filter(word => word.initial_sound === "ᄐ");
+  if(generation === "") {
+    tfilteredWords = data.words;
+  }
+  else {
+    tfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  tfilteredWords = tfilteredWords.filter(word => word.initial_sound === "ᄐ");
   tsubjectsAndIds = tfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -375,7 +444,7 @@ function TMyComponent({ ttops, tlefts }) {
         const top = ttops[index];
         const left = tlefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -387,7 +456,13 @@ function TMyComponent({ ttops, tlefts }) {
 let pfilteredWords = [];
 let psubjectsAndIds = [];
 if (data) {
-  pfilteredWords = data.words.filter(word => word.initial_sound === "ᄑ");
+  if(generation === "") {
+    pfilteredWords = data.words;
+  }
+  else {
+    pfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  pfilteredWords = pfilteredWords.filter(word => word.initial_sound === "ᄑ");
   psubjectsAndIds = pfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -401,7 +476,7 @@ function PMyComponent({ ptops, plefts }) {
         const top = ptops[index];
         const left = plefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -415,7 +490,13 @@ function PMyComponent({ ptops, plefts }) {
 let hfilteredWords = [];
 let hsubjectsAndIds = [];
 if (data) {
-  hfilteredWords = data.words.filter(word => word.initial_sound === "ᄒ");
+  if(generation === "") {
+    hfilteredWords = data.words;
+  }
+  else {
+    hfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  hfilteredWords = hfilteredWords.filter(word => word.initial_sound === "ᄒ");
   hsubjectsAndIds = hfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -429,7 +510,7 @@ function HMyComponent({ htops, hlefts }) {
         const top = htops[index];
         const left = hlefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );
@@ -441,7 +522,13 @@ function HMyComponent({ htops, hlefts }) {
 let spfilteredWords = [];
 let spsubjectsAndIds = [];
 if (data) {
-  spfilteredWords = data.words.filter(word => word.initial_sound === "Ⴕ");
+  if(generation === "") {
+    spfilteredWords = data.words;
+  }
+  else {
+    spfilteredWords = data.words.filter(word=> word.generation === generation);
+  }
+  spfilteredWords = spfilteredWords.filter(word => word.initial_sound === "Ⴕ");
   spsubjectsAndIds = spfilteredWords.map(word => ({
     id: word.id,
     subject: word.subject
@@ -455,7 +542,7 @@ function SPMyComponent({ sptops, splefts }) {
         const top = sptops[index];
         const left = splefts[index];
         return (
-          <Link key={item.id} to={`../page3_word/`}>
+          <Link key={item.id} to={`../page3_word/${item.id}`}>
             <TextLabel style={{ top: `${top}px`, left: `${left}px`, width: '200px' }}>{item.subject}</TextLabel>
           </Link>
         );

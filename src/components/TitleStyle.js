@@ -888,12 +888,14 @@ export const BalanceContainer = styled.div`
   display: flex;
   justify-content: center; /* 수평 가운데 정렬 */
   align-items: center; /* 수직 가운데 정렬 */
-  gap: 150px;
-  margin-top: 50px;
+  gap: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top:50px;
 `;
 
 export const LeftButtonContainer = styled.div`
-  display: flex;
+  flex:4;
   font-size: 30px;
   color: black;
   flex-direction: column;
@@ -902,11 +904,12 @@ export const LeftButtonContainer = styled.div`
   font-family: "main_f", sans-serif;
   font-weight: 900;
   ${fontFace};
-  wordwrap: "break-word";
+  word-wrap: normal;
+  white-space: normal;
   text-align: center;
 `;
 export const VSContainer = styled.div`
-  display: flex;
+  flex:1;
   font-size: 30px;
   color: black;
   flex-direction: column;
@@ -918,7 +921,7 @@ export const VSContainer = styled.div`
   wordwrap: "break-word";
 `;
 export const RightButtonContainer = styled.div`
-  display: flex;
+  flex:4;
   font-size: 30px;
   color: black;
   flex-direction: column;
@@ -927,7 +930,8 @@ export const RightButtonContainer = styled.div`
   font-family: "main_f", sans-serif;
   font-weight: 900;
   ${fontFace};
-  wordwrap: "break-word";
+  word-wrap: normal;
+  white-space: normal;
   text-align: center;
 `;
 
@@ -937,7 +941,8 @@ export const balanceSelect = styled.p`
   font-family: "main_f", sans-serif;
   font-weight: 200;
   ${fontFace};
-  wordwrap: "break-word";
+  word-wrap: normal;
+  white-space: normal;
   text-align: center;
 `;
 
@@ -1046,6 +1051,11 @@ export const GoHomeBox = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
 `;
+
+export const BalanceResultContainer = styled.div`
+  margin-left: 500px;
+  margin-right: 500px
+`
 
 //Page3.js
 
