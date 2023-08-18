@@ -69,17 +69,13 @@ const Page0 = () => {
       .then((response) => {
         // 서버로부터 받은 번역 결과 설정
         const translated = response.data.word.subject;
-        if (inputContent === translated) {
-          setTranslatedContent(response.data.word.standard);
-          setTranslatedContent_type(response.data.word.generation);
-          setTranslatedContent_mean(response.data.word.meaning);
-          setTranslatedContent_sen(response.data.ex.example);
-          setTranslatedContent_syn(response.data.syno.synonym);
-          setTranslatedContent_input(response.data.wordinput);
-          setTranslatedValue(translated);
-        } else {
-          setTranslatedContent("해당 단어의 번역이 없습니다.");
-        }
+        setTranslatedContent(response.data.word.standard);
+        setTranslatedContent_type(response.data.word.generation);
+        setTranslatedContent_mean(response.data.word.meaning);
+        setTranslatedContent_sen(response.data.ex.example);
+        setTranslatedContent_syn(response.data.syno.synonym);
+        setTranslatedContent_input(response.data.word.subject);
+        setTranslatedValue(translated);
       })
       .catch((error) => {
         console.error("Error during translation:", error);

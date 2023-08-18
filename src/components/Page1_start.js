@@ -94,8 +94,9 @@ const Page1_start = () => {
         .then((response) => {
           const problemNumber = response.data.index;
           const question = response.data.question.contents;
+          const generation = response.data.user.generation;
           navigate("/page1", {
-            state: { problemNumber, question },
+            state: { problemNumber, question, generation },
           });
         })
         .catch((error) => {
