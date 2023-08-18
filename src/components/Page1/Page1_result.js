@@ -1,3 +1,4 @@
+//page1_result
 // Page1.js
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -10,6 +11,7 @@ import {
   CenteredImage_1_result,
   Background1_1_result,
   Comment_nickname,
+  Comment_content,
   Title_1_start,
   WhiteBox_1_result,
   Title_1_result,
@@ -40,6 +42,7 @@ import {
   StartLink_1,
   Divider_0,
   CommentContainer_1,
+  Comment_time,
   CommentTitle_1,
   CommentBox_1,
   Commentlist_date,
@@ -113,7 +116,7 @@ const Page1_result = () => {
         const Clist = response.data.CommentList;
         setCommentList(
           Clist.map((cinfo) => ({
-            cnickname: cinfo.nickname,
+            nickname: cinfo.nickname,
             content: cinfo.content,
             time: cinfo.time,
             date: cinfo.date,
@@ -134,7 +137,6 @@ const Page1_result = () => {
           },
         })
         .then((response) => {
-
           const receivedGrade = response.data.grade.grade;
           const receivedFOne = response.data.grade.Fone;
           const receivedFTwo = response.data.grade.Ftwo;
@@ -172,7 +174,6 @@ const Page1_result = () => {
               date: cinfo.date,
             }))
           );
-
         })
         .catch((error) => {
           console.error("Error sending data to server:", error);
@@ -241,8 +242,8 @@ const Page1_result = () => {
                         <CommentInfoContainer>
                           <Comment_nickname>{cinfo.nickname}</Comment_nickname>
                           <Verticalbar_comment />
-                          <span>{cinfo.content}</span>
-                          <span>{cinfo.time}</span>
+                          <Comment_content>{cinfo.content}</Comment_content>
+                          <Comment_time>{cinfo.time}</Comment_time>
                         </CommentInfoContainer>
                       </div>
                     );
