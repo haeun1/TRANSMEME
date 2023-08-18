@@ -108,7 +108,7 @@ const Page1_result = () => {
             const Clist = response.data.CommentList;
             setCommentList(
                 Clist.map((cinfo) => ({
-                    cnickname:cinfo.nickname,
+                    nickname:cinfo.nickname,
                     content:cinfo.content,
                     time:cinfo.time,
                     date:cinfo.date,
