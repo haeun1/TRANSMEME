@@ -850,6 +850,7 @@ export const Error_message_container = styled.div`
 export const Number = styled.h1`
   font-size: 50px;
   color: black;
+  text-align: center;
   margin-top: 30px;
   span {
     color: #00b0f0;
@@ -858,12 +859,14 @@ export const Number = styled.h1`
 
 export const QuizBox = styled.div`
   background-color: rgba(0, 176, 240, 0.37);
+  text-align: center;
   border-radius: 50px;
   display: inline-block;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 `;
 
 export const BlackText = styled.h1`
+  text-align: center;
   margin-left: 60px;
   margin-right: 60px;
   font-size: 35px;
@@ -949,6 +952,13 @@ export const VS = styled.p`
 `;
 
 //page2_result
+export const ProblemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const SelectContainer = styled.div`
   position: absolute;
   display: flex;
@@ -960,8 +970,13 @@ export const SelectContainer = styled.div`
   font-family: "main_f", sans-serif;
   font-weight: 900;
   ${fontFace};
-  word-wrap: break-word;
   text-align: center;
+  white-space: normal;
+  witdh: 110%;
+  max-width: 300px;
+  overflow-wrap: normal; /* 단어 내에서 줄바꿈 허용하지 않음 */
+  word-wrap: normal; /* 단어 내에서 줄바꿈 허용하지 않음 */
+  word-break: normal; /* 단어 내에서 줄바꿈 허용하지 않음 */
   z-index: 2; /* 더 높은 z-index 값 설정 */
 
   /* 나머지 스타일 */
@@ -969,6 +984,7 @@ export const SelectContainer = styled.div`
 
 export const ImageContainer = styled.div`
   position: relative;
+  width: 250px;
   z-index: 1; /* 더 낮은 z-index 값 설정 */
 
   /* 나머지 스타일 */
@@ -979,6 +995,9 @@ export const MainContainer = styled.div`
   display: flex;
   justify-content: center; /* 수평 가운데 정렬 */
   align-items: center; /* 수직 가운데 정렬 */
+  overflow-wrap: normal; /* 단어 내에서 줄바꿈 허용하지 않음 */
+  word-wrap: normal; /* 단어 내에서 줄바꿈 허용하지 않음 */
+  word-break: normal; /* 단어 내에서 줄바꿈 허용하지 않음 */
 `;
 
 export const NotSelectContainer = styled.div`
@@ -1033,10 +1052,17 @@ export const GoHomeBox = styled(NavLink)`
 // Group 15
 export const Group15 = styled.div`
   position: absolute;
-  width: 200px;
-  height: 50px;
-  left: 10px;
-  top: 0px;
+  width: 100px;
+  height: 25px;
+  left: 176px;
+  top: 225px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+  z-index: 5;
 `;
 
 // image 5
@@ -1044,18 +1070,14 @@ export const Image5 = styled.div`
   position: absolute;
   width: 28px;
   height: 19px;
-  left: 140px;
-  top: 225px;
+  left:-30px;
   background: url(${image5});
+  z-index: 1;
 `;
 
 // 세대 선택
 export const GenerationSelection = styled.div`
-  position: absolute;
-  width: 99px;
-  height: 25px;
-  left: 176px;
-  top: 225px;
+  position: absolute;g
   font-family: "main_f", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1097,6 +1119,7 @@ export const Label = styled.div`
   font-size: 18px;
   line-height: 18px;
   color: #000000;
+  z-index : 5;
 
   // Modify top position based on props
   top: ${(props) => props.topPosition || "0px"};
@@ -1358,24 +1381,34 @@ export const MTextLabel = styled.div`
 `;
 
 
-//Page3_word.js
-
-// 단어해석 Wrapper
-export const WordTranslationWrapper = styled.div`
+// ㅂ Wrapper
+export const BWrapper = styled.div`
   position: absolute;
-  width: 900px;
-  height: 60px;
-  left: calc(50% - 900px / 2 - 62px);
-  top: 0px;
+  width: 191px;
+  height: 283px;
+  left: -70px;
+  top: 75px;
 `;
 
-// 가즈아
-export const WordLabel = styled.div`
+// Rectangle 22
+export const BRectangle = styled.div`
   position: absolute;
-  width: 167px;
-  height: 59px;
-  left: 89px;
-  top: 300px;
+  width: 153px;
+  height: 63px;
+  left: 951px;
+  top: 1005px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// ㅂ
+export const BCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 1012px;
+  top: 1018px;
   font-family: "main_f", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1384,19 +1417,401 @@ export const WordLabel = styled.div`
   color: #000000;
 `;
 
+// 가즈아 - Since this component is repeated multiple times, we'll use props to adjust positions
+export const BTextLabel = styled.div`
+  position: absolute;
+  width: 80px;
+  height: 27px;
+  left: ${(props) => props.left || "932px"};
+  top: ${(props) => props.top};
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  color: #000000;
+`;
+
+//ㅅ
+// S Wrapper
+export const SWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 286px;
+  left: 45px;
+  top: 100px;
+`;
+
+export const SRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 403px;
+  top: 1343px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// 
+export const SCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 461px;
+  top: 1358px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+
+//ㅇ
+//  Wrapper
+export const IWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 283px;
+  left: -70px;
+  top: 100px;
+`;
+
+// Rectangle 22
+export const IRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 951px;
+  top: 1343px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// 아
+export const ICharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 1012px;
+  top: 1358px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+// ㅈ
+// J Wrapper
+export const JWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 286px;
+  left: 45px;
+  top: 125px;
+`;
+
+export const JRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 403px;
+  top: 1681px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// 
+export const JCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 461px;
+  top: 1698px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+
+//ㅊ
+//  Wrapper
+export const CWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 283px;
+  left: -70px;
+  top: 125px;
+`;
+
+// Rectangle 
+export const CRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 951px;
+  top: 1681px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// ㅊCharacter
+export const CCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 1012px;
+  top: 1698px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+
+
+
+// ㅋ
+// K Wrapper
+export const KWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 286px;
+  left: 45px;
+  top: 150px;
+`;
+
+export const KRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 403px;
+  top: 2019px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// 
+export const KCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 461px;
+  top: 2038px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+
+//ㅌ
+//  Wrapper
+export const TWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 283px;
+  left: -70px;
+  top: 150px;
+`;
+
+// Rectangle 
+export const TRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 951px;
+  top: 2019px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// Character
+export const TCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 1012px;
+  top: 2038px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+// ㅍ
+// P Wrapper
+export const PWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 286px;
+  left: 45px;
+  top: 175px;
+`;
+
+export const PRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 403px;
+  top: 2357px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// 
+export const PCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 461px;
+  top: 2378px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+
+//ㅎ
+//  Wrapper
+export const HWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 283px;
+  left: -70px;
+  top: 175px;
+`;
+
+// Rectangle 
+export const HRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 951px;
+  top: 2357px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// Character
+export const HCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 1012px;
+  top: 2378px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+
+// SP
+// SP Wrapper
+export const SPWrapper = styled.div`
+  position: absolute;
+  width: 191px;
+  height: 286px;
+  left: 45px;
+  top: 200px;
+`;
+
+export const SPRectangle = styled.div`
+  position: absolute;
+  width: 153px;
+  height: 63px;
+  left: 403px;
+  top: 2695px;
+  background: rgba(0, 176, 240, 0.37);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+// 
+export const SPCharacter = styled.div`
+  position: absolute;
+  width: 83px;
+  height: 49px;
+  left: 461px;
+  top: 2718px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+`;
+
+
+//Page3_word.js
+
+// 단어해석 Wrapper
+export const WordTranslationWrapper = styled.div`
+  position: absolute;
+  width: 1000px;
+  height: 60px;
+  left: calc(50% - 900px / 2 - 62px);
+  top: 0px;
+`;
+
+// 가즈아
+export const WordLabel = styled.div`
+  position: absolute;
+  width: auto;
+  height: 59px;
+  left: 89px;
+  top: 300px;
+  justify-content: space-between;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
+  align-items: center;
+  margin-right:25px;
+`;
+
 // (Z)
-export const ZLabel = styled.div`
+export const ZLabel = styled.span`
   position: absolute;
   width: 125px;
   height: 30px;
-  left: 197px;
-  top: 315px;
   font-family: "main_f", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
   color: #ababab;
+  margin-left: 15px;
+  margin-top:13px;
+  margin-right: 25px;
 `;
 
 // Line 27

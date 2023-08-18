@@ -32,6 +32,7 @@ const App = () => {
         <Route path="/page1_result" element={<Page1_result />} />
         <Route path="/page2_result" element={<Page2_result />} />
         <Route path="/page3_word" element={<Page3_word />} />
+        <Route path="/page3_word/:id" element={<Page3_word />} />
       </Routes>
     </Router>
   );

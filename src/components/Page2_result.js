@@ -20,104 +20,68 @@ import {
   ResultContainer,
   ShareImageContainer,
   GoHomeBox,
+  ProblemContainer
 } from "./TitleStyle";
 import mainLogo from "../mainImg/mainlogo.png";
 import o_ic from "../mainImg/o_ic.png";
+import x_ic from "../mainImg/x_ic.png";
 import share_btn from "../mainImg/share_btn.png";
+import { useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 
+const StyledDiv = styled.div`
+    width: 100vw;
+    text-align: center;
+`;
 const Page2_result = () => {
-  const pageNumber = 2; // 페이지 번호를 변수로 설정
+  const location = useLocation();
+  const { results, ten_quiz, answerLocations } = location.state;
+  const totalScore = results.reduce((score, isCorrect) => (isCorrect ? score + 1 : score), 0);
+
   return (
-    <Container>
+    <ProblemContainer>
       <CenteredImage src={mainLogo} />
       <Title>신조어테스트</Title>
-
-      <Number>
-        <span>0</span>1
-      </Number>
-      <QuizBox>
-        <BlackText>머선129?</BlackText>
-      </QuizBox>
-      <BalanceContainer>
-        <MainContainer>
-          <SelectContainer>무슨일이야?</SelectContainer>
-          <ImageContainer>
-            <img src={o_ic} alt="Image" />
-          </ImageContainer>
-        </MainContainer>
-
-        <VSContainer>
-          <VS>VS</VS>
-        </VSContainer>
-        <NotSelectContainer>
-          친구미선의
-          <br />
-          별명
-        </NotSelectContainer>
-      </BalanceContainer>
-      <Divider_0></Divider_0>
-
-      <Number>
-        <span>0</span>1
-      </Number>
-      <QuizBox>
-        <BlackText>머선129?</BlackText>
-      </QuizBox>
-      <BalanceContainer>
-        <MainContainer>
-          <SelectContainer>무슨일이야?</SelectContainer>
-          <ImageContainer>
-            <img src={o_ic} alt="Image" />
-          </ImageContainer>
-        </MainContainer>
-
-        <VSContainer>
-          <VS>VS</VS>
-        </VSContainer>
-        <NotSelectContainer>
-          친구미선의
-          <br />
-          별명
-        </NotSelectContainer>
-      </BalanceContainer>
-      <Divider_0></Divider_0>
-
-      <Number>
-        <span>0</span>1
-      </Number>
-      <QuizBox>
-        <BlackText>머선129?</BlackText>
-      </QuizBox>
-      <BalanceContainer>
-        <MainContainer>
-          <SelectContainer>무슨일이야?</SelectContainer>
-          <ImageContainer>
-            <img src={o_ic} alt="Image" />
-          </ImageContainer>
-        </MainContainer>
-
-        <VSContainer>
-          <VS>VS</VS>
-        </VSContainer>
-        <NotSelectContainer>
-          친구미선의
-          <br />
-          별명
-        </NotSelectContainer>
-      </BalanceContainer>
-      <Divider_0></Divider_0>
-
+      {ten_quiz.map((quiz, index) => (
+        <StyledDiv key={index}>
+          <Number>
+            <span>0</span>{index + 1}
+          </Number>
+          <QuizBox>
+            <BlackText>{quiz.subject}</BlackText>
+          </QuizBox>
+          <BalanceContainer>
+            <MainContainer>
+              <SelectContainer>{answerLocations[index] ? quiz.answer : quiz.wrong}</SelectContainer>
+              <ImageContainer>
+                <img src={!results[index] ? o_ic : x_ic} alt="Image" />
+              </ImageContainer>
+            </MainContainer>
+            <VSContainer>
+              <VS>VS</VS>
+            </VSContainer>
+            <MainContainer>
+              <SelectContainer>
+                {answerLocations[index] ? quiz.wrong : quiz.answer}
+              </SelectContainer>
+              <ImageContainer>
+                <img src={results[index] ? o_ic : x_ic} alt="Image" />
+              </ImageContainer>
+            </MainContainer>
+          </BalanceContainer>
+          <Divider_0></Divider_0>
+        </StyledDiv>
+      ))}
       <ResultContainer>
-        <ResultText>내 점수는: 3점</ResultText>
+        <ResultText>내 점수는: {totalScore}점</ResultText>
         <ShareImageContainer>
           <img src={share_btn} alt="Image" />
         </ShareImageContainer>
       </ResultContainer>
-
       <GoHomeBox to="/home">
         <BlackText>홈으로</BlackText>
       </GoHomeBox>
-    </Container>
+    </ProblemContainer>
   );
 };
 
