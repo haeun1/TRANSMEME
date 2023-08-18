@@ -275,12 +275,9 @@
   
   /* transmeme_btn */
   
-  .transmeme_btn {
-    position: absolute;
+  .transmeme_btn {  
     width: 230px;
     height: 356.44px;
-    left: 649px;
-    top: 150px;
   }
   
   /* transferlogo */
@@ -288,8 +285,8 @@
   .transferlogo {
     width: 180px;
     height: 34.44px;
-    left: 50%;
-    background-image: url(../mainImg/transferlogo.png);
+    
+    background-image: url(../mainImg/title_kr.png);
   }
   
   /* transfer_ic */

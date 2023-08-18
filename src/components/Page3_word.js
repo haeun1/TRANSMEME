@@ -88,9 +88,6 @@ const Page3_word = () => {
         </WordContent>
       </Group41Wrapper>
   
-      <ImageLink to="/home">
-        <SmallImage_0 src={mainButtonImage} alt="메인 화면으로 이동" />
-      </ImageLink>
     </Container>
   );
 };

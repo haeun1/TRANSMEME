@@ -76,9 +76,6 @@ const Page2_result = () => {
       ))}
       <ResultContainer>
         <ResultText>내 점수는: {totalScore}점</ResultText>
-        <ShareImageContainer>
-          <img src={share_btn} alt="Image" />
-        </ShareImageContainer>
       </ResultContainer>
       <GoHomeBox to="/home">
         <BlackText>홈으로</BlackText>

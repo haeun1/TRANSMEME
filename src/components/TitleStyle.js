@@ -23,15 +23,48 @@ export const fontFace = css`
   }
 `;
 
+
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
+export const Container1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  position: relative;
+`;
+
+export const Container2 = styled.div`
+  width: 200px
+  align-items: center;
+  position: relative;
+`
+
 export const CenteredImage = styled.img`
   padding: 50px;
   width: 200px;
+`;
+
+//Home.js
+export const Page1Container = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 20px;
+  font-family: "main_f", sans-serif;
+  font-weight: 200;
+  color: black;
+  ${fontFace};
+`;
+
+export const TransferLogo = styled.img`
+  width: 180px;
+  margin-top : 25px;
 `;
 
 export const Title = styled.h1`
@@ -40,6 +73,101 @@ export const Title = styled.h1`
   font-family: "logo_f", sans-serif;
   font-weight: 300;
   ${fontFace};
+`;
+export const TransferIC = styled.img`
+  /* Add your .transfer_ic styles here */
+  display: flex;
+`;
+
+export const PageLink = styled(NavLink)`
+ text-decoration: none; /* 밑줄 없애기 */
+`;
+
+export const PageContainer = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top : 50px;
+`;
+
+export const Section = styled.div`
+  flex: 1;
+  height: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+`;
+
+export const PagesIC = styled.img`
+  height: 280px;
+`
+export const PageitContainer = styled.div`
+  position: relative
+  display: flex;
+  align-items: center; /* 세로 가운데 정렬 */
+`;
+
+// exam_ic
+export const ExamIcon = styled.img`
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  left: 145px;
+  top: 810px;
+`;
+
+export const ExamRectangle = styled.div`
+  position: absolute;
+  width: 308px;
+  height: 76px;
+  left: 105px;
+  top: 1110px;
+  background: rgba(0, 176, 240, 0.52);
+  border-radius: 50px;
+`;
+
+
+// # 나의 MZ력은?
+export const MZPower = styled.div`
+  position: absolute
+  width: 50px;
+  height: 22px;
+  left: 191px;
+  top: 500px;
+  font-family: "main_f", sans-serif;
+  ${fontFace};
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 176, 240, 0.52) 70%
+  );
+  background-size: auto 100%;
+`;
+
+// Rectangle 25
+export const ExamRectangle2 = styled.div`
+  position: absolute;
+  width: 132px;
+  height: 10px;
+  left: 187px;
+  top: 1088px;
+  background: rgba(0, 176, 240, 0.38);
+`;
+
+// MZ테스트
+export const MZTestTitle = styled.div`
+  position: absolute;
+  width: 198px;
+  height: 75px;
+  left: 178px;
+  top: 1126px;
+  font-family: "main_f", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000000;
 `;
 
 export const RankingContainer_0 = styled.div`
@@ -1091,7 +1219,6 @@ export const NotSelectContainer = styled.div`
 export const ResultText = styled.p`
   font-size: 50px;
   margin-top: 200px;
-  margin-left: 80px;
   font-family: "main_f", sans-serif;
   font-weight: 900;
   ${fontFace};
@@ -1109,7 +1236,8 @@ export const ShareImageContainer = styled.div`
 export const ResultContainer = styled.div`
   display: flex;
   flex-direction: row;
-
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
   /* 나머지 스타일 */
 `;
 

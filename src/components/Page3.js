@@ -564,14 +564,19 @@ function SPMyComponent({ sptops, splefts }) {
       });
   }, []);
 
-
-
+  const getColor = (gen) => {
+    return generation === gen ? '#22BAF2' : 'black';
+};
+  function handleTitleClick() {
+    setShowGroup40(false);
+}
   if (!data) return <div>Loading...</div>;
 
   return (
     <Container>
       <CenteredImage src={mainLogo} />
-      <Title>도감</Title>
+
+      <Title onClick={()=>{handleGenerationClick(""); handleTitleClick();}}>도감</Title>
 
       <Group15 onClick={handleGroupClick}>
         <Image5 />
@@ -580,14 +585,13 @@ function SPMyComponent({ sptops, splefts }) {
 
       <Divider_0></Divider_0> 
       <Group40 style={{ display: showGroup40 ? "block" : "none" }}>
-
-        <Line topPosition="301px" />
-        <Line topPosition="344px" />
-        <Line topPosition="389px" />
-        <Label topPosition="272px" left="103px" onClick={()=>handleGenerationClick("X")}>X (70-80)</Label>
-        <Label topPosition="314px" onClick={()=>handleGenerationClick("M")} >M (81-94)</Label>
-        <Label topPosition="357px" width="139px"onClick={()=>handleGenerationClick("Z")}>Z (95-2012)</Label>
-      </Group40>
+            <Line topPosition="301px" />
+            <Line topPosition="344px" />
+            <Line topPosition="389px" />
+            <Label topPosition="272px" left="103px" onClick={()=>handleGenerationClick("X")} style={{color: getColor("X")}}>X (70-80)</Label>
+            <Label topPosition="314px" onClick={()=>handleGenerationClick("M")} style={{color: getColor("M")}}>M (81-94)</Label>
+            <Label topPosition="357px" width="139px"onClick={()=>handleGenerationClick("Z")}style={{color: getColor("Z")}}>Z (95-2012)</Label>
+        </Group40>
 
       <Container>
       <Wrapper>

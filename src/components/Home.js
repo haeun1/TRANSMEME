@@ -1,59 +1,59 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import "./Home.css";
+import {Container,CenteredImage, Page1Container,TransferLogo
+,PageLink,TransferIC,PageContainer,Section, PagesIC, PageitContainer,Rectangle25
+,ExamIcon,ExamRectangle,ExamRectangle2,MZTest, MZTestTitle, Container1,MZPower
+,Container2} from "./TitleStyle.js";
+import mainLogo from "../mainImg/title_en.png";
+import transferLogo from "../mainImg/title_kr.png";
+import transferICImage from "../mainImg/transfer_ic.png";
+import mztestIC from "../mainImg/mztest_btn.png";
+import transmemeIC from "../mainImg/transmeme_btn.png";
+import quizIC from "../mainImg/quiz_btn.png";
+import dictIC from "../mainImg/dict_btn.png";
 
 const Home = () => {
   return (
-    <div className="main-container">
-      <div className="mainlogo" />
+    <Container>
+      <CenteredImage src={mainLogo} />
+      
+      <PageLink to="/page0">
+            <Container>
+            <TransferIC src={transmemeIC} alt="Transfer IC" />
+          </Container>
+          </PageLink>
 
-      <Link to="/page0_start">
-        <div className="transmeme_btn">
-          <div className="transfer_ic" />
-          <h1 className="mem-search">세대 통합을 위한 밈번역기</h1>
-          <div className="transferlogo" />
-        </div>
-      </Link>
+      <PageContainer>
+        
+        <Section>
+          <PageLink to="/page1_start">
+            <Container>
+            <TransferIC src={mztestIC} alt="Transfer IC" style={{ margin: '30px' }} />
+          </Container>
+          </PageLink>
+        </Section>
+      
 
-      <div className="line6" />
+        <Section>
+          <PageLink to="/page2">
+            <Container>
+            <TransferIC src={quizIC} alt="Transfer IC" />
+          </Container>
+          </PageLink>
+        </Section>
+      
+        <Section>
+          <PageLink to="/page3">
+            <Container>
+            <TransferIC src={dictIC} alt="Transfer IC" style={{ margin: '35px' }}/>
+          </Container>
+          </PageLink>
+        </Section>
 
-      <Link to="/page1_start">
-        <div className="mztest_btn">
-          <div className="exam_ic" />
-          <p>
-            <span className="mz-power"># 나의 MZ력은?</span>
-          </p>
-          <h1 className="mz-test">MZ테스트</h1>
-          <div className="rectangle19" />
-        </div>
-      </Link>
-
-      <div className="line10" />
-
-      <Link to="/page2">
-        <div className="quiz_btn">
-          <div className="quiz_ic" />
-          <p>
-            <span className="mz-catch">#MZ어 따라잡기</span>
-          </p>
-          <h1 className="word-guess">신조어 맞추기</h1>
-          <div className="rectangle28" />
-        </div>
-      </Link>
-
-      <div className="line9" />
-
-      <Link to="/page3">
-        <div className="dict_btn">
-          <div className="dictionary_ic" />
-          <p>
-            <span className="a-to-z">#세대 간 소통을 위한 A to Z</span>
-          </p>
-          <h1 className="dictionary">도감</h1>
-          <div className="rectangle29" />
-        </div>
-      </Link>
-    </div>
+      </PageContainer>
+    </Container>
   );
 };
 
