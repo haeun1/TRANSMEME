@@ -1,3 +1,5 @@
+//titlestyle
+
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import logoFont from "../fonts/logo.ttf";
@@ -527,6 +529,7 @@ export const CommentContainer_1 = styled.div`
   font-family: "main_f", sans-serif;
   font-weight: 500;
   ${fontFace};
+  padding-bottom: 100px;
 `;
 
 export const CommentBox_1 = styled.div`
@@ -613,7 +616,7 @@ export const StartLink_main = styled(NavLink)`
 `;
 export const Container_1_result = styled.div`
   width: 100%;
-  height: 500px;
+  height: 100%;
   border: 0.5px #ababab solid;
   border-radius: 20px;
   position: relative;
@@ -883,7 +886,8 @@ export const Error_message_container = styled.div`
 export const Verticalbar_comment = styled.div`
   width: 0px;
   height: 22px;
-  border: 1px black solid;
+  border: 1px white solid;
+  margin-right:10px;
   margin 0px;
 `;
 
@@ -898,19 +902,32 @@ export const Commentlist_date = styled.div`
   /* 다른 스타일 설정 */
 `;
 export const Comment_nickname = styled.div`
-  width: 150px;
+  width: 20%;
   /* 다른 스타일 설정 */
+`;
+export const Comment_time = styled.div`
+  color: #ababab;
+  font-size: 14px;
+`;
+export const Comment_content = styled.div`
+  width: 65%;
+  margin-left: 10px;
 `;
 
 // 코멘트 정보를 나열하는 스타일
 export const CommentInfoContainer = styled.div`
   display: flex;
   align-items: center;
+  border-radius: 10px;
+  border: none;
+  background-color: #f5f5f5;
+  margin-top: 10px;
+  font-size: 35px;
   /* 각 정보 간 간격 설정 */
   span {
     margin: 0 8px;
   }
-  padding: 5px;
+  padding: 15px;
 `;
 
 // CommentInfoContainer 안의 바 스타일
