@@ -21,6 +21,7 @@ const Page1 = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const storedNickname = localStorage.getItem("nickname");
+  const storedGeneration = localStorage.getItem("generation");
   const storedAge = localStorage.getItem("age");
   // const [selectedValue, setSelectedValue] = useState(null);
   const [problemNumber, setProblemNumber] = useState(null);
@@ -37,7 +38,7 @@ const Page1 = () => {
   const sendDataToServer = (choice) => {
     const dataToSend = {
       nickname: storedNickname,
-      generation: "Z",
+      generation: storedGeneration,
       index: problemNumber,
       choice: choice === "동의" ? 1 : 2,
     };
