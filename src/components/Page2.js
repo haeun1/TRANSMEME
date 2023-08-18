@@ -46,12 +46,6 @@ const Page2 = () => {
         setAnswerLocations([...answerLocations, isLeft]);
         setQuizIndex(quizIndex + 1);
         setIsLeft(Math.random() > 0.5);
-
-        if (isCorrect) {
-          alert('정답입니다!');
-      } else {
-          alert('틀렸습니다.');
-      }
     };
 
     return (

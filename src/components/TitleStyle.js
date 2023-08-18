@@ -616,7 +616,7 @@ export const ShareButton_1_result = styled.img`
 `;
 
 export const MainContainer_1 = styled.div`
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center; /* 수평 가운데 정렬 */

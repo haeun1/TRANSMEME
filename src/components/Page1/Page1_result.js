@@ -200,7 +200,6 @@ const Page1_result = () => {
           당신은&nbsp;<Type_1_result>"{grade}"</Type_1_result>&nbsp;입니다.
         </Typecontent_1_result>
         <TypeImage_1_result src={typeImageSrc}></TypeImage_1_result>
-        <ShareButton_1_result src={sharebutton}></ShareButton_1_result>
       </Container_1>
       <MainContainer_1>
         <FeatureContainer_1>
@@ -338,7 +337,7 @@ const Page1_result = () => {
           ))}
         </StatisticContainer1_1_result>
 
-        <ImageLink_1 to="/">
+        <ImageLink_1 to="/home">
           <NextButton_1>홈으로</NextButton_1>
         </ImageLink_1>
       </MainContainer_1>
