@@ -895,10 +895,12 @@ export const Commentlistcontainer = styled.div`
   font-family: "main_f", sans-serif;
   font-weight: 300;
   font-size: 22px;
+
   ${fontFace};
 `;
 
 export const Commentlist_date = styled.div`
+  margin-bottom: 30px;
   /* 다른 스타일 설정 */
 `;
 export const Comment_nickname = styled.div`
@@ -977,11 +979,11 @@ export const BalanceContainer = styled.div`
   gap: 100px;
   margin-left: 50px;
   margin-right: 50px;
-  margin-top:50px;
+  margin-top: 50px;
 `;
 
 export const LeftButtonContainer = styled.div`
-  flex:4;
+  flex: 4;
   font-size: 30px;
   color: black;
   flex-direction: column;
@@ -995,7 +997,7 @@ export const LeftButtonContainer = styled.div`
   text-align: center;
 `;
 export const VSContainer = styled.div`
-  flex:1;
+  flex: 1;
   font-size: 30px;
   color: black;
   flex-direction: column;
@@ -1007,7 +1009,7 @@ export const VSContainer = styled.div`
   wordwrap: "break-word";
 `;
 export const RightButtonContainer = styled.div`
-  flex:4;
+  flex: 4;
   font-size: 30px;
   color: black;
   flex-direction: column;
@@ -1140,8 +1142,8 @@ export const GoHomeBox = styled(NavLink)`
 
 export const BalanceResultContainer = styled.div`
   margin-left: 500px;
-  margin-right: 500px
-`
+  margin-right: 500px;
+`;
 
 //Page3.js
 
