@@ -330,6 +330,19 @@ export const InputField_1_start = styled.input`
   font-weight: 200;
   ${fontFace};
 `;
+export const InputField_1_result = styled.input`
+  width: 600px;
+  height: 70px;
+  margin-top: 10px;
+  margin-left: 300px;
+  padding: 5px;
+  border: none;
+  font-size: 40px;
+  border-radius: 10px;
+  font-family: "main_f", sans-serif;
+  font-weight: 200;
+  ${fontFace};
+`;
 
 export const StartLink_1 = styled(NavLink)`
   position: absolute;
@@ -508,10 +521,12 @@ export const FeatureContent_1 = styled.div`
 `;
 
 export const CommentContainer_1 = styled.div`
-  margin-top: 50px;
   width: 100%;
   height: 100%;
   position: relative;
+  font-family: "main_f", sans-serif;
+  font-weight: 500;
+  ${fontFace};
 `;
 
 export const CommentBox_1 = styled.div`
@@ -527,19 +542,36 @@ export const CommentBox_1 = styled.div`
 export const CommentTitle_1 = styled.div`
   width: 275px;
   height: 50px;
-  left: 55px;
+  left: 40px;
   top: 30px;
   position: absolute;
-  color: #00b0f0;
-  font-size: 40px;
-  font-family: "Gmarket Sans TTF";
-  font-weight: 700;
-  word-wrap: break-word;
+  font-family: "main_f", sans-serif;
+  font-weight: 800;
+  ${fontFace};
+  color: #03b0ef;
+  font-size: 32px;
 `;
+export const Commentbutton_1 = styled.button`
+  width: 80px;
+  height: 50px;
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  font-family: "main_f", sans-serif;
+  font-weight: 800;
+  ${fontFace};
+  background-color: #03b0ef;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+  cursor: pointer;
+`;
+
 export const Verticalbar_1 = styled.div`
   width: 75px;
   height: 0;
-  left: 288px;
+  left: 260px;
   top: 90px;
   position: absolute;
   transform: rotate(-90deg);
@@ -582,8 +614,11 @@ export const StartLink_main = styled(NavLink)`
 export const Container_1_result = styled.div`
   width: 100%;
   height: 500px;
+  border: 0.5px #ababab solid;
+  border-radius: 20px;
   position: relative;
-  margin-top: 170px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   padding-bottom: 80px;
   font-family: "main_f", sans-serif;
   font-weight: 400;
@@ -609,7 +644,6 @@ export const Title_1_result = styled.div`
   position: absolute;
   color: #00b0f0;
   font-size: 35px;
-  font-family: "Gmarket Sans TTF";
   font-weight: 700;
   word-wrap: break-word;
 `;
@@ -846,6 +880,41 @@ export const Error_message_container = styled.div`
   position: relative;
 `;
 
+export const Verticalbar_comment = styled.div`
+  width: 0px;
+  height: 22px;
+  border: 1px black solid;
+  margin 0px;
+`;
+
+export const Commentlistcontainer = styled.div`
+  font-family: "main_f", sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  ${fontFace};
+`;
+
+export const Commentlist_date = styled.div`
+  /* 다른 스타일 설정 */
+`;
+export const Comment_nickname = styled.div`
+  width: 150px;
+  /* 다른 스타일 설정 */
+`;
+
+// 코멘트 정보를 나열하는 스타일
+export const CommentInfoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  /* 각 정보 간 간격 설정 */
+  span {
+    margin: 0 8px;
+  }
+  padding: 5px;
+`;
+
+// CommentInfoContainer 안의 바 스타일
+
 // Page2
 export const Number = styled.h1`
   font-size: 50px;
@@ -1070,7 +1139,7 @@ export const Image5 = styled.div`
   position: absolute;
   width: 28px;
   height: 19px;
-  left:-30px;
+  left: -30px;
   background: url(${image5});
   z-index: 1;
 `;
@@ -1119,7 +1188,7 @@ export const Label = styled.div`
   font-size: 18px;
   line-height: 18px;
   color: #000000;
-  z-index : 5;
+  z-index: 5;
 
   // Modify top position based on props
   top: ${(props) => props.topPosition || "0px"};
@@ -1329,7 +1398,6 @@ export const LTextLabel = styled.div`
   color: #000000;
 `;
 
-
 // M Wrapper
 export const MWrapper = styled.div`
   position: absolute;
@@ -1379,7 +1447,6 @@ export const MTextLabel = styled.div`
   line-height: 29px;
   color: #000000;
 `;
-
 
 // ㅂ Wrapper
 export const BWrapper = styled.div`
@@ -1453,7 +1520,7 @@ export const SRectangle = styled.div`
   border-radius: 50px;
 `;
 
-// 
+//
 export const SCharacter = styled.div`
   position: absolute;
   width: 83px;
@@ -1467,7 +1534,6 @@ export const SCharacter = styled.div`
   line-height: 40px;
   color: #000000;
 `;
-
 
 //ㅇ
 //  Wrapper
@@ -1527,7 +1593,7 @@ export const JRectangle = styled.div`
   border-radius: 50px;
 `;
 
-// 
+//
 export const JCharacter = styled.div`
   position: absolute;
   width: 83px;
@@ -1542,7 +1608,6 @@ export const JCharacter = styled.div`
   color: #000000;
 `;
 
-
 //ㅊ
 //  Wrapper
 export const CWrapper = styled.div`
@@ -1553,7 +1618,7 @@ export const CWrapper = styled.div`
   top: 125px;
 `;
 
-// Rectangle 
+// Rectangle
 export const CRectangle = styled.div`
   position: absolute;
   width: 153px;
@@ -1580,9 +1645,6 @@ export const CCharacter = styled.div`
   color: #000000;
 `;
 
-
-
-
 // ㅋ
 // K Wrapper
 export const KWrapper = styled.div`
@@ -1604,7 +1666,7 @@ export const KRectangle = styled.div`
   border-radius: 50px;
 `;
 
-// 
+//
 export const KCharacter = styled.div`
   position: absolute;
   width: 83px;
@@ -1619,7 +1681,6 @@ export const KCharacter = styled.div`
   color: #000000;
 `;
 
-
 //ㅌ
 //  Wrapper
 export const TWrapper = styled.div`
@@ -1630,7 +1691,7 @@ export const TWrapper = styled.div`
   top: 150px;
 `;
 
-// Rectangle 
+// Rectangle
 export const TRectangle = styled.div`
   position: absolute;
   width: 153px;
@@ -1678,7 +1739,7 @@ export const PRectangle = styled.div`
   border-radius: 50px;
 `;
 
-// 
+//
 export const PCharacter = styled.div`
   position: absolute;
   width: 83px;
@@ -1693,7 +1754,6 @@ export const PCharacter = styled.div`
   color: #000000;
 `;
 
-
 //ㅎ
 //  Wrapper
 export const HWrapper = styled.div`
@@ -1704,7 +1764,7 @@ export const HWrapper = styled.div`
   top: 175px;
 `;
 
-// Rectangle 
+// Rectangle
 export const HRectangle = styled.div`
   position: absolute;
   width: 153px;
@@ -1731,7 +1791,6 @@ export const HCharacter = styled.div`
   color: #000000;
 `;
 
-
 // SP
 // SP Wrapper
 export const SPWrapper = styled.div`
@@ -1753,7 +1812,7 @@ export const SPRectangle = styled.div`
   border-radius: 50px;
 `;
 
-// 
+//
 export const SPCharacter = styled.div`
   position: absolute;
   width: 83px;
@@ -1767,7 +1826,6 @@ export const SPCharacter = styled.div`
   line-height: 40px;
   color: #000000;
 `;
-
 
 //Page3_word.js
 
@@ -1795,7 +1853,7 @@ export const WordLabel = styled.div`
   line-height: 40px;
   color: #000000;
   align-items: center;
-  margin-right:25px;
+  margin-right: 25px;
 `;
 
 // (Z)
@@ -1810,7 +1868,7 @@ export const ZLabel = styled.span`
   line-height: 23px;
   color: #ababab;
   margin-left: 15px;
-  margin-top:13px;
+  margin-top: 13px;
   margin-right: 25px;
 `;
 
